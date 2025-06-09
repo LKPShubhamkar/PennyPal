@@ -21,28 +21,21 @@ import PersonIcon from "@mui/icons-material/Person";
 
 const Footer = () => {
   return (
-    <Box
-      sx={{
-        pt: 6,
-        pb: 4,
-        mt: 8,
-      }}
-    >
+    <Box sx={{ bgcolor: "#fff", pt: 6, pb: 6, fontFamily: "Lato" }}>
       <Container maxWidth="lg">
-        {/* Top Row: Download + Social */}
+        {/* App & Social */}
         <Grid
           container
           spacing={4}
           alignItems="center"
           justifyContent="space-between"
         >
-          {/* Download Section (60%) */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={7}>
             <Typography
               variant="subtitle1"
               fontWeight={600}
-              gutterBottom
               color="#4B2DBF"
+              gutterBottom
             >
               Download the App
             </Typography>
@@ -61,23 +54,16 @@ const Footer = () => {
               />
             </Stack>
           </Grid>
-
-          {/* Social Section (40%) */}
-          <Grid item xs={12} md={4} textAlign={{ xs: "center", md: "left" }}>
+          <Grid item xs={12} md={5}>
             <Typography
               variant="subtitle1"
               fontWeight={600}
-              gutterBottom
               color="#4B2DBF"
+              gutterBottom
             >
               Follow us on
             </Typography>
-            <Stack
-              direction="row"
-              spacing={1}
-              mt={1}
-              justifyContent={{ xs: "center", md: "flex-start" }}
-            >
+            <Stack direction="row" spacing={1}>
               <IconButton>
                 <FacebookIcon color="primary" />
               </IconButton>
@@ -105,9 +91,9 @@ const Footer = () => {
           <Divider />
         </Box>
 
-        {/* Company Info + Office */}
+        {/* Info + Contact */}
         <Grid container spacing={4}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={7}>
             <Typography variant="body2" lineHeight={1.8}>
               LKP Securities Ltd: Single SEBI registration number for
               NSE/BSE/MSEI: INZ000216033
@@ -126,20 +112,22 @@ const Footer = () => {
               Fax No.: +91 22 2287 4787
             </Typography>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={5}>
             <Typography fontWeight={600} mb={1} color="#4B2DBF">
-              Corporate Office:
+              Corporate Office :
             </Typography>
             <Typography variant="body2" lineHeight={1.6}>
-              2nd Floor, Gala Impecca, Andheri Kurla Road, Near Hotel Courtyard
-              Marriott, Chakala, Andheri (East), Mumbai-400059.
+              2nd Floor, Gala Impecca, Andheri Kurla Road,
+              <br />
+              Near Hotel Courtyard Marriott, Chakala,
+              <br />
+              Andheri (East), Mumbai-400059.
             </Typography>
-
             <Box mt={2}>
               <Typography fontWeight={600} color="#4B2DBF">
                 Have a query, write to us
               </Typography>
-              <Stack direction="row" alignItems="center" spacing={1} mt={0.5}>
+              <Stack direction="row" alignItems="center" spacing={1}>
                 <MailOutlineIcon fontSize="small" />
                 <Typography variant="body2">helpdesk@pennypal.in</Typography>
               </Stack>
@@ -147,7 +135,7 @@ const Footer = () => {
           </Grid>
         </Grid>
 
-        {/* Compliance & Grievances */}
+        {/* Compliance + Grievance */}
         <Box mt={4}>
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
@@ -158,7 +146,7 @@ const Footer = () => {
                 <PersonIcon fontSize="small" />
                 <Typography variant="body2">Mr. Ritesh Kumar Tiwari</Typography>
               </Stack>
-              <Stack direction="row" alignItems="center" spacing={1} mt={0.5}>
+              <Stack direction="row" alignItems="center" spacing={1}>
                 <PhoneIcon fontSize="small" />
                 <Typography variant="body2">022-66353110</Typography>
               </Stack>
@@ -175,16 +163,12 @@ const Footer = () => {
           </Grid>
         </Box>
 
-        {/* Bottom Links */}
+        {/* Other Links */}
         <Box mt={6}>
-          <Divider />
-          <Stack
-            direction="row"
-            spacing={2}
-            flexWrap="wrap"
-            mt={2}
-            justifyContent="center"
-          >
+          <Typography fontWeight={600} color="#4B2DBF" mb={1}>
+            Other Links
+          </Typography>
+          <Stack direction="row" spacing={2} flexWrap="wrap">
             {[
               "Privacy Policy Disclaimer",
               "Advisory for Investors",
@@ -198,18 +182,73 @@ const Footer = () => {
               "KMP",
               "SEBI Complaint Redressal System",
               "Customer Support",
-            ].map((linkText, index) => (
+            ].map((text, idx) => (
               <Link
-                key={index}
+                key={idx}
                 href="#"
                 underline="hover"
                 color="text.secondary"
                 fontSize="14px"
               >
-                {linkText}
+                {text}
               </Link>
             ))}
           </Stack>
+        </Box>
+
+        {/* Disclaimer */}
+        <Box mt={4}>
+          <Typography fontWeight={600} color="#4B2DBF" mb={1}>
+            Disclaimer
+          </Typography>
+          <Typography variant="body2" color="text.secondary" lineHeight={1.6}>
+            Investments in securities market are subject to market risk, read
+            all the related documents carefully before investing. The
+            disseminated stock are exemplary, and not recommendations.
+            Information is research-based and investors are requested to act
+            with due diligence. SEBI Registration Number - INZ000216033: We
+            collect, retain, process, or disclose your information for
+            legitimate business purposes only. To contact you and to provide
+            information as latest updates regarding products or services, we may
+            use calls or SMS. We do not sell or rent your contact information to
+            third parties. Please note that by subscribing to the
+            above-mentioned details, you are authorizing us to call/SMS you for
+            a period of 12 months even if you may be registered under DND. We
+            shall Call/SMS you for a period of 12 months.
+          </Typography>
+        </Box>
+
+        {/* Attention Investors */}
+        <Box mt={4}>
+          <Typography fontWeight={600} color="#4B2DBF" mb={1}>
+            Attention Investors
+          </Typography>
+          <Typography variant="body2" color="text.secondary" lineHeight={1.6}>
+            Stock Brokers can accept securities as Margin from Clients only by
+            way of pledge in the depository system w.e.f. September 1, 2020.
+            Update your mobile number & email ID with your Stock Broker /
+            Depository Participant. Receive alerts on your Registered Mobile for
+            all debit and other important transactions in your demat account
+            directly from CDSL/NSDL on the same day. Issued in the interest of
+            investors. Investors may please refer to the Exchange’s Frequently
+            Asked Questions (FAQs) issued vide circular reference NSE/INSP/45191
+            dated July 31, 2020 and NSE/INSP/45534 dated August 31, 2020 and
+            other guidelines issued from time to time in this regard. Check your
+            Securities / MF / Bonds in the consolidated account statement issued
+            by NSDL/CDSL every month.
+          </Typography>
+        </Box>
+
+        {/* Arbitration */}
+        <Box mt={4}>
+          <Typography
+            variant="caption"
+            display="block"
+            // textAlign="center"
+            color="text.secondary"
+          >
+            Arbitration Mechanism on the Stock Exchange
+          </Typography>
         </Box>
       </Container>
     </Box>
