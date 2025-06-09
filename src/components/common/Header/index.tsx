@@ -1,18 +1,13 @@
 import { AppBar, Toolbar, Button, Box, Container } from "@mui/material";
-import { styled } from "@mui/system";
+import { Link } from "react-router-dom";
 
-// Styled navigation button
-const NavButton = styled(Button)({
-  color: "#000",
-  textTransform: "none",
-  fontWeight: 400,
-  fontSize: "0.95rem",
-  margin: "0 12px",
-  minWidth: "unset",
-  fontFamily: "Lato",
-  lineHeight: "100%",
-  letterSpacing: "0%",
-});
+const navLinks = [
+  { label: "About Us", path: "/about-us" },
+  { label: "Products", path: "/products" },
+  { label: "Platform", path: "/platform" },
+  { label: "Pricing", path: "/pricing" },
+  { label: "Stock Study", path: "/stock-study" },
+];
 
 const Header = () => {
   return (
@@ -22,7 +17,6 @@ const Header = () => {
       sx={{
         bgcolor: "#fff",
         borderBottom: "1px solid #eee",
-
         justifyContent: "center",
       }}
     >
@@ -35,11 +29,26 @@ const Header = () => {
 
           {/* Menu Items */}
           <Box display="flex" alignItems="center">
-            {["About Us", "Products", "Platform", "Pricing", "Stock Study"].map(
-              (item) => (
-                <NavButton key={item}>{item}</NavButton>
-              )
-            )}
+            {navLinks.map((item) => (
+              <Button
+                key={item.label}
+                component={Link}
+                to={item.path}
+                sx={{
+                  color: "#000",
+                  textTransform: "none",
+                  fontWeight: 400,
+                  fontSize: "0.95rem",
+                  margin: "0 12px",
+                  minWidth: "unset",
+                  fontFamily: "Lato",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                }}
+              >
+                {item.label}
+              </Button>
+            ))}
           </Box>
 
           {/* Action Buttons */}
