@@ -5,11 +5,10 @@ import { styled } from "@mui/system";
 const NavButton = styled(Button)({
   color: "#000",
   textTransform: "none",
-  fontWeight: 400,
+  fontWeight: 500,
   fontSize: "0.95rem",
   margin: "0 12px",
   minWidth: "unset",
-  fontFamily: "Lato",
   lineHeight: "100%",
   letterSpacing: "0%",
 });
@@ -22,7 +21,6 @@ const Header = () => {
       sx={{
         bgcolor: "#fff",
         borderBottom: "1px solid #eee",
-
         justifyContent: "center",
       }}
     >
@@ -33,13 +31,13 @@ const Header = () => {
             <img src="logo.png" alt="PennyPal" style={{ height: 50 }} />
           </Box>
 
-          {/* Menu Items */}
+          {/* Navigation Buttons */}
           <Box display="flex" alignItems="center">
-            {["About Us", "Products", "Platform", "Pricing", "Stock Study"].map(
-              (item) => (
-                <NavButton key={item}>{item}</NavButton>
-              )
-            )}
+            <NavButton>About Us</NavButton>
+            <NavButton>Products</NavButton>
+            <NavButton>Platform</NavButton>
+            <NavButton>Pricing</NavButton>
+            <NavButton>Stock Study</NavButton>
           </Box>
 
           {/* Action Buttons */}
