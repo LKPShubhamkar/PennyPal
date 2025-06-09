@@ -83,7 +83,8 @@ const WhatWeStandFor = () => {
                   width: 50,
                   height: 50,
                   objectFit: "contain",
-                  mr: 2,
+                  //   mr: 2,
+                  ml: 2,
                 }}
               />
 

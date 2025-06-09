@@ -86,7 +86,7 @@ const TopArm = () => {
                 display: "flex",
                 alignItems: "center",
                 width: "100%",
-                maxWidth: 400, // or whatever width you want
+                maxWidth: 400,
               }}
             >
               <TextField
