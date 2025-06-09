@@ -1,17 +1,13 @@
 import { AppBar, Toolbar, Button, Box, Container } from "@mui/material";
-import { styled } from "@mui/system";
+import { Link } from "react-router-dom";
 
-// Styled navigation button
-const NavButton = styled(Button)({
-  color: "#000",
-  textTransform: "none",
-  fontWeight: 500,
-  fontSize: "0.95rem",
-  margin: "0 12px",
-  minWidth: "unset",
-  lineHeight: "100%",
-  letterSpacing: "0%",
-});
+const navLinks = [
+  { label: "About Us", path: "/about-us" },
+  { label: "Products", path: "/products" },
+  { label: "Platform", path: "/platform" },
+  { label: "Pricing", path: "/pricing" },
+  { label: "Stock Study", path: "/stock-study" },
+];
 
 const Header = () => {
   return (
@@ -28,16 +24,33 @@ const Header = () => {
         <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
           {/* Logo Section */}
           <Box display="flex" alignItems="center">
-            <img src="logo.png" alt="PennyPal" style={{ height: 50 }} />
+            <Link to="/">
+              <img src="logo.png" alt="PennyPal" style={{ height: 50 }} />
+            </Link>
           </Box>
 
-          {/* Navigation Buttons */}
+          {/* Menu Items */}
           <Box display="flex" alignItems="center">
-            <NavButton>About Us</NavButton>
-            <NavButton>Products</NavButton>
-            <NavButton>Platform</NavButton>
-            <NavButton>Pricing</NavButton>
-            <NavButton>Stock Study</NavButton>
+            {navLinks.map((item) => (
+              <Button
+                key={item.label}
+                component={Link}
+                to={item.path}
+                sx={{
+                  color: "#000",
+                  textTransform: "none",
+                  fontWeight: 400,
+                  fontSize: "0.95rem",
+                  margin: "0 12px",
+                  minWidth: "unset",
+                  fontFamily: "Lato",
+                  lineHeight: "100%",
+                  letterSpacing: "0%",
+                }}
+              >
+                {item.label}
+              </Button>
+            ))}
           </Box>
 
           {/* Action Buttons */}
