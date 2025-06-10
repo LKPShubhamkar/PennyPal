@@ -130,7 +130,7 @@ const TopArm = () => {
                         px: 5.4,
                         minWidth: "auto",
                         "&:hover": {
-                          bgcolor: "#4b2dbf",
+                          bgcolor: "#5633CD",
                         },
                       }}
                     >

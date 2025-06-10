@@ -4,7 +4,7 @@ import ShowChartIcon from "@mui/icons-material/ShowChart";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import AutoGraphIcon from "@mui/icons-material/AutoGraph";
-import HomeThreeImg from "../../../src/assets/HomeThree.png"; // Update as per your path
+import HomeThreeImg from "../../../../src/assets/HomeThree.png"; // Update as per your path
 
 const features = [
   {
@@ -54,7 +54,7 @@ const HomeThree = () => {
             <Typography
               variant="h4"
               fontWeight={700}
-              color="#4B2DBF"
+              color="#5633CD"
               mb={1}
               sx={{ lineHeight: 1.4 }}
             >
@@ -75,15 +75,11 @@ const HomeThree = () => {
                 >
                   <Box>{feature.icon}</Box>
                   <Box>
-                    <Typography
-                      variant="subtitle1"
-                      fontWeight={600}
-                      color="#4B2DBF"
-                    >
-                      {feature.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {feature.desc}
+                    <Typography variant="body2">
+                      <span style={{ color: "#5633CD", fontWeight: 600 }}>
+                        {feature.title}
+                      </span>{" "}
+                      – {feature.desc}
                     </Typography>
                   </Box>
                 </Stack>

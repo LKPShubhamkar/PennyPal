@@ -29,7 +29,7 @@ const Footer = () => {
               variant="subtitle1"
               fontWeight={550}
               fontSize={20}
-              color="#4B2DBF"
+              color="#5633CD"
               gutterBottom
             >
               Download the App
@@ -54,7 +54,7 @@ const Footer = () => {
               variant="subtitle1"
               fontWeight={550}
               fontSize={20}
-              color="#4B2DBF"
+              color="#5633CD"
               gutterBottom
             >
               Follow us on
@@ -123,7 +123,7 @@ const Footer = () => {
             </Typography>
           </div>
           <div>
-            <Typography fontWeight={550} mb={1} color="#4B2DBF" fontSize={20}>
+            <Typography fontWeight={550} mb={1} color="#5633CD" fontSize={20}>
               Corporate Office :
             </Typography>
             <Typography variant="body2" lineHeight={1.6} letterSpacing={1}>
@@ -134,7 +134,7 @@ const Footer = () => {
               Andheri (East), Mumbai-400059.
             </Typography>
             <Box mt={2}>
-              <Typography fontWeight={550} color="#4B2DBF" fontSize={20}>
+              <Typography fontWeight={550} color="#5633CD" fontSize={20}>
                 Have a query, write to us
               </Typography>
               <Stack direction="row" alignItems="center" spacing={1}>
@@ -149,7 +149,7 @@ const Footer = () => {
         <Box mt={4}>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div>
-              <Typography fontWeight={550} fontSize={20} color="#4B2DBF" mb={1}>
+              <Typography fontWeight={550} fontSize={20} color="#5633CD" mb={1}>
                 Compliance Officer Details
               </Typography>
               <Stack direction="row" alignItems="center" spacing={1}>
@@ -162,7 +162,7 @@ const Footer = () => {
               </Stack>
             </div>
             <div>
-              <Typography fontWeight={550} color="#4B2DBF" mb={1} fontSize={20}>
+              <Typography fontWeight={550} color="#5633CD" mb={1} fontSize={20}>
                 In case of grievances for Securities Broking / DP
               </Typography>
               <Stack direction="row" alignItems="center" spacing={1}>
@@ -175,7 +175,7 @@ const Footer = () => {
 
         {/* Other Links */}
         <Box mt={6}>
-          <Typography fontWeight={550} fontSize={20} color="#4B2DBF" mb={1}>
+          <Typography fontWeight={550} fontSize={20} color="#5633CD" mb={1}>
             Other Links
           </Typography>
 
@@ -197,7 +197,7 @@ const Footer = () => {
 
         {/* Disclaimer */}
         <Box mt={4}>
-          <Typography fontWeight={550} fontSize={20} color="#4B2DBF" mb={1}>
+          <Typography fontWeight={550} fontSize={20} color="#5633CD" mb={1}>
             Disclaimer
           </Typography>
           <Typography variant="body2" color="#000" lineHeight={1.8}>
@@ -219,7 +219,7 @@ const Footer = () => {
 
         {/* Attention Investors */}
         <Box mt={4}>
-          <Typography fontWeight={550} fontSize={20} color="#4B2DBF" mb={1}>
+          <Typography fontWeight={550} fontSize={20} color="#5633CD" mb={1}>
             Attention Investors
           </Typography>
           <Typography variant="body2" color="#000" lineHeight={1.8}>

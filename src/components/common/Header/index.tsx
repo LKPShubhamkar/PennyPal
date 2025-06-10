@@ -79,7 +79,7 @@ const Header = () => {
                 fontWeight: 500,
                 px: 3,
                 py: 1,
-                "&:hover": { bgcolor: "#4b2dbf" },
+                "&:hover": { bgcolor: "#5633CD" },
               }}
             >
               Open Free Account

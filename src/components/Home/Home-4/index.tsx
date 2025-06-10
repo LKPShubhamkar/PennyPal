@@ -1,5 +1,5 @@
 import { Box, Stack, Typography, Paper, useTheme } from "@mui/material";
-import HomeFourImage from "../../../src/assets/HomeFour.png"; // Adjust path if needed
+import HomeFourImage from "../../../../src/assets/HomeFour.png"; // Adjust path if needed
 
 const featureList = [
   "Trading View Chart Integration",
@@ -46,7 +46,7 @@ const HomeFour = () => {
             variant="h4"
             fontWeight={700}
             sx={{
-              color: "#4B2DBF",
+              color: "#5633CD",
               lineHeight: 1.4,
             }}
           >
@@ -73,7 +73,7 @@ const HomeFour = () => {
                   py: 1.5,
                   minWidth: 220,
                   textAlign: "center",
-                  color: "#4B2DBF",
+                  color: "#5633CD",
                   fontWeight: 500,
                   fontSize: "14px",
                   backgroundColor: "#fff",
