@@ -3,7 +3,16 @@ import LkpLogo from "../../../assets/LKPLogo.png"; // replace with your actual i
 
 const Promos = () => {
   return (
-    <Box sx={{ py: 8, bgcolor: "#5633CD", fontFamily: "Lato" }}>
+    <Box
+      sx={{
+        py: 7,
+        bgcolor: "#5633CD",
+        fontFamily: "Lato",
+        maxWidth: "1100px", // reduce overall width manually (900px looks nice)
+        mx: "auto", // center it
+        px: { xs: 2, md: 4 }, // add small horizontal padding for mobile & desktop
+      }}
+    >
       <Container maxWidth="lg">
         <Box
           sx={{

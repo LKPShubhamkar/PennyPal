@@ -63,7 +63,7 @@ const WhatWeStandFor = () => {
                 flex: "0 0 31%", // force ~3 in a row
                 border: "1px solid #eee",
                 borderRadius: "12px",
-                p: 2,
+                // p: 2,
                 display: "flex",
                 alignItems: "center",
                 minHeight: "120px", // smaller box height
@@ -83,7 +83,8 @@ const WhatWeStandFor = () => {
                   width: 50,
                   height: 50,
                   objectFit: "contain",
-                  mr: 2,
+                  //   mr: 2,
+                  ml: 2,
                 }}
               />
 

@@ -3,7 +3,7 @@ import {
   Container,
   Typography,
   TextField,
-  InputAdornment,
+  //   InputAdornment,
   IconButton,
 } from "@mui/material";
 import Banner from "../../../assets/about_banner.png";
@@ -41,7 +41,6 @@ const TopArm = () => {
             >
               Smart Trading. Built on Experience.
             </Typography>
-
             <Typography
               variant="body1"
               sx={{
@@ -58,7 +57,6 @@ const TopArm = () => {
               Indian investors and traders to manage their trades without
               concern for high brokerage fees.
             </Typography>
-
             <Typography
               variant="body1"
               sx={{
@@ -72,7 +70,6 @@ const TopArm = () => {
               under LKP Securities Limited, a well-established name in the
               Indian capital markets since 1948.
             </Typography>
-
             {/* TextField Section */}
             <Typography
               variant="h6"
@@ -84,62 +81,70 @@ const TopArm = () => {
             >
               Open Free Demat Account
             </Typography>
-            <TextField
-              placeholder="Enter your mobile number"
-              variant="outlined"
-              type="tel" // allows only numbers
-              inputProps={{
-                inputMode: "numeric", // numeric keyboard on mobile
-                pattern: "[0-9]*", // regex pattern for digits only
-              }}
+            <Box
               sx={{
-                // width: "100%",
-                // mb: 2,
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "22px",
-                  //   height: 48,
-                },
-                "& .MuiOutlinedInput-input": {
-                  padding: "12px 14px",
-                  //   paddingRight: "48px",
-                },
+                display: "flex",
+                alignItems: "center",
+                width: "100%",
+                maxWidth: 400,
               }}
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
+            >
+              <TextField
+                placeholder="Enter your mobile number"
+                variant="outlined"
+                type="tel"
+                inputProps={{
+                  inputMode: "numeric",
+                  pattern: "[0-9]*",
+                }}
+                sx={{
+                  flexGrow: 1,
+                  "& .MuiOutlinedInput-root": {
+                    borderTopRightRadius: 0,
+                    borderBottomRightRadius: 0,
+                    borderTopLeftRadius: "22px",
+                    borderBottomLeftRadius: "22px",
+                  },
+                  "& .MuiOutlinedInput-input": {
+                    padding: "12px",
+                  },
+                }}
+                InputProps={{
+                  startAdornment: (
                     <Typography
                       sx={{
                         fontWeight: 500,
                         color: "#000",
                         fontSize: "1rem",
                         fontFamily: "Lato",
+                        mr: 1,
+                        userSelect: "none",
                       }}
                     >
                       +91
                     </Typography>
-                  </InputAdornment>
-                ),
-                endAdornment: (
-                  <InputAdornment position="end" sx={{ height: "100%" }}>
-                    <IconButton
-                      sx={{
-                        bgcolor: "#5633CD",
-                        color: "#fff",
-                        borderRadius: "20px",
-                        height: 40,
-                        px: 5.4,
-                        minWidth: "auto",
-                        "&:hover": {
-                          bgcolor: "#5633CD",
-                        },
-                      }}
-                    >
-                      <ArrowForwardIcon />
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
+                  ),
+                  endAdornment: null, // remove adornment here
+                }}
+              />
+
+              <IconButton
+                sx={{
+                  bgcolor: "#5633CD",
+                  color: "#fff",
+                  borderRadius: "0 22px 22px 0",
+                  height: 48,
+                  px: 4,
+                  minWidth: "auto",
+                  //   ml: -1, // overlap 1px border between button and input for seamless join
+                  "&:hover": {
+                    bgcolor: "#4b2dbf",
+                  },
+                }}
+              >
+                <ArrowForwardIcon />
+              </IconButton>
+            </Box>
           </Box>
 
           {/* Right Side */}
