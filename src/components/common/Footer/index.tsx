@@ -1,11 +1,9 @@
 import {
   Box,
   Container,
-  Grid,
   Typography,
   Divider,
   Stack,
-  Link,
   IconButton,
 } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -17,6 +15,8 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import PhoneIcon from "@mui/icons-material/Phone";
 import PersonIcon from "@mui/icons-material/Person";
+import AppStore from "../../../assets/appstore.png";
+import PlayStore from "../../../assets/playstore.png";
 
 const Footer = () => {
   return (
@@ -37,13 +37,13 @@ const Footer = () => {
             <Stack direction="row" spacing={2} mt={2}>
               <Box
                 component="img"
-                src="/appstore.png"
+                src={AppStore}
                 alt="App Store"
                 sx={{ height: 40 }}
               />
               <Box
                 component="img"
-                src="/playstore.png"
+                src={PlayStore}
                 alt="Google Play"
                 sx={{ height: 40 }}
               />

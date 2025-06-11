@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Grid, Typography, Stack, Container } from "@mui/material";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";

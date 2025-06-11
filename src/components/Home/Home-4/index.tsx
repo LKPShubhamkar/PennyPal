@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, Paper, useTheme } from "@mui/material";
+import { Box, Stack, Typography, Paper } from "@mui/material";
 import HomeFourImage from "../../../../src/assets/HomeFour.png"; // Adjust path if needed
 
 const featureList = [
@@ -10,8 +10,6 @@ const featureList = [
 ];
 
 const HomeFour = () => {
-  const theme = useTheme();
-
   return (
     <Box sx={{ bgcolor: "#f9f9fb", py: 10, px: 2 }}>
       <Stack
@@ -69,9 +67,10 @@ const HomeFour = () => {
                 sx={{
                   border: "1px solid #E0E0E0",
                   borderRadius: "12px",
+
                   px: 3,
                   py: 1.5,
-                  minWidth: 220,
+                  minWidth: 120,
                   textAlign: "center",
                   color: "#5633CD",
                   fontWeight: 500,

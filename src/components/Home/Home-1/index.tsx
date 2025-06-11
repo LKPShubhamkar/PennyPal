@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Typography, Container } from "@mui/material";
 import HomeoneImg from "../../../../src/assets/HomeOne.png";
 
@@ -27,29 +26,25 @@ const HomeOne = () => {
               Gateway to Smart, Simple and Affordable Investing
             </Typography>
 
-            <Typography
-              variant="body1"
-              mb={3}
-              sx={{ color: "#555", fontSize: "1rem" }}
-            >
+            <Typography variant="body1" mb={3} sx={{ fontSize: "1rem" }}>
               Trade Smart. Save More.
             </Typography>
-
+            <br />
             <Typography
               sx={{
-                fontSize: "1.25rem",
-                fontWeight: 600,
+                fontSize: "1rem",
+                // fontWeight: 500,
                 lineHeight: 1.5,
                 mb: 3,
               }}
             >
               Invest. Trade. Grow. <br />
-              All at Flat{" "}
               <Box
                 component="span"
-                sx={{ color: "#5633Cd", fontWeight: 700, fontSize: "1.3rem" }}
+                sx={{ fontWeight: 700, fontSize: "1.5rem" }}
               >
-                ₹10/Order.
+                All at Flat
+                <span style={{ color: "#5633Cd" }}> ₹10/Order.</span>
               </Box>
             </Typography>
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Typography, Stack, Container } from "@mui/material";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 

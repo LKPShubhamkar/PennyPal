@@ -1,15 +1,17 @@
 import { AppBar, Toolbar, Button, Box, Container } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
   { label: "About Us", path: "/about-us" },
   { label: "Products", path: "/products" },
   { label: "Platform", path: "/platform" },
   { label: "Pricing", path: "/pricing" },
-  { label: "Stock Study", path: "/stock-study" },
+  // { label: "Stock Study", path: "/stock-study" },
 ];
 
 const Header = () => {
+  const location = useLocation();
+
   return (
     <AppBar
       position="sticky"
@@ -18,6 +20,7 @@ const Header = () => {
         bgcolor: "#fff",
         borderBottom: "1px solid #eee",
         justifyContent: "center",
+        fontFamily: "Lato",
       }}
     >
       <Container maxWidth="lg">
@@ -31,26 +34,34 @@ const Header = () => {
 
           {/* Menu Items */}
           <Box display="flex" alignItems="center">
-            {navLinks.map((item) => (
-              <Button
-                key={item.label}
-                component={Link}
-                to={item.path}
-                sx={{
-                  color: "#000",
-                  textTransform: "none",
-                  fontWeight: 400,
-                  fontSize: "0.95rem",
-                  margin: "0 12px",
-                  minWidth: "unset",
-                  fontFamily: "Lato",
-                  lineHeight: "100%",
-                  letterSpacing: "0%",
-                }}
-              >
-                {item.label}
-              </Button>
-            ))}
+            {navLinks.map((item) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <Button
+                  key={item.label}
+                  component={Link}
+                  to={item.path}
+                  sx={{
+                    color: isActive ? "#5633CD" : "#000",
+                    textTransform: "none",
+                    fontWeight: isActive ? 600 : 400,
+                    fontSize: "0.95rem",
+                    margin: "0 12px",
+                    minWidth: "unset",
+                    fontFamily: "Lato",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    borderBottom: isActive
+                      ? "2.5px solid #5633CD"
+                      : "2.5px solid transparent",
+                    borderRadius: 0,
+                    transition: "all 0.2s",
+                  }}
+                >
+                  {item.label}
+                </Button>
+              );
+            })}
           </Box>
 
           {/* Action Buttons */}

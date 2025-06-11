@@ -1,13 +1,6 @@
-import {
-  Box,
-  Container,
-  Typography,
-  TextField,
-  //   InputAdornment,
-  IconButton,
-} from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import Banner from "../../../assets/about_banner.png";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import PhoneInput from "../PhoneInput";
 const TopArm = () => {
   return (
     <Box
@@ -71,80 +64,7 @@ const TopArm = () => {
               Indian capital markets since 1948.
             </Typography>
             {/* TextField Section */}
-            <Typography
-              variant="h6"
-              sx={{
-                mb: 2,
-                fontWeight: 500,
-                fontFamily: "Lato",
-              }}
-            >
-              Open Free Demat Account
-            </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                width: "100%",
-                maxWidth: 400,
-              }}
-            >
-              <TextField
-                placeholder="Enter your mobile number"
-                variant="outlined"
-                type="tel"
-                inputProps={{
-                  inputMode: "numeric",
-                  pattern: "[0-9]*",
-                }}
-                sx={{
-                  flexGrow: 1,
-                  "& .MuiOutlinedInput-root": {
-                    borderTopRightRadius: 0,
-                    borderBottomRightRadius: 0,
-                    borderTopLeftRadius: "22px",
-                    borderBottomLeftRadius: "22px",
-                  },
-                  "& .MuiOutlinedInput-input": {
-                    padding: "12px",
-                  },
-                }}
-                InputProps={{
-                  startAdornment: (
-                    <Typography
-                      sx={{
-                        fontWeight: 500,
-                        color: "#000",
-                        fontSize: "1rem",
-                        fontFamily: "Lato",
-                        mr: 1,
-                        userSelect: "none",
-                      }}
-                    >
-                      +91
-                    </Typography>
-                  ),
-                  endAdornment: null, // remove adornment here
-                }}
-              />
-
-              <IconButton
-                sx={{
-                  bgcolor: "#5633CD",
-                  color: "#fff",
-                  borderRadius: "0 22px 22px 0",
-                  height: 48,
-                  px: 4,
-                  minWidth: "auto",
-                  //   ml: -1, // overlap 1px border between button and input for seamless join
-                  "&:hover": {
-                    bgcolor: "#4b2dbf",
-                  },
-                }}
-              >
-                <ArrowForwardIcon />
-              </IconButton>
-            </Box>
+            <PhoneInput />
           </Box>
 
           {/* Right Side */}
