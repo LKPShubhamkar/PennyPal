@@ -15,7 +15,7 @@ const PricingOne = () => {
     >
       {/* Left Section */}
       <Box sx={{ flex: 1, minWidth: 300, pr: { md: 6 }, mb: { xs: 4, md: 0 } }}>
-        <Typography fontSize="1.25rem" fontWeight={500} mb={5}>
+        <Typography fontSize="1.8em" fontWeight={500} mb={5}>
           Flat ₹10/Order. Always.
         </Typography>
         <Typography
@@ -29,7 +29,7 @@ const PricingOne = () => {
         >
           Simple. Transparent. No Fine Print.
         </Typography>
-        <Typography fontSize="1.125rem" color="text.secondary" mb={3}>
+        <Typography fontSize="1.125rem" mb={3}>
           Whether you’re buying one share or a hundred, we charge a flat ₹10 per
           order. That’s it.
         </Typography>

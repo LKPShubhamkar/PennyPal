@@ -20,7 +20,6 @@ const Header = () => {
         bgcolor: "#fff",
         borderBottom: "1px solid #eee",
         justifyContent: "center",
-        fontFamily: "Lato",
       }}
     >
       <Container maxWidth="lg">
@@ -48,7 +47,6 @@ const Header = () => {
                     fontSize: "0.95rem",
                     margin: "0 12px",
                     minWidth: "unset",
-                    fontFamily: "Lato",
                     lineHeight: "100%",
                     letterSpacing: "0%",
                     borderBottom: isActive
@@ -66,7 +64,7 @@ const Header = () => {
 
           {/* Action Buttons */}
           <Box display="flex" alignItems="center">
-            <Button
+            {/* <Button
               variant="outlined"
               sx={{
                 borderRadius: "37px",
@@ -80,7 +78,7 @@ const Header = () => {
               }}
             >
               Login
-            </Button>
+            </Button> */}
             <Button
               variant="contained"
               sx={{
@@ -92,6 +90,8 @@ const Header = () => {
                 py: 1,
                 "&:hover": { bgcolor: "#5633CD" },
               }}
+              target="_blank"
+              href="https://ekyc.pennypal.in/lkpsec/individual_pennypal"
             >
               Open Free Account
             </Button>

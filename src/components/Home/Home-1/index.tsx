@@ -25,44 +25,40 @@ const HomeOne = () => {
               <span style={{ color: "#5633CD" }}> PennyPal </span> - Your
               Gateway to Smart, Simple and Affordable Investing
             </Typography>
-
-            <Typography variant="body1" mb={3} sx={{ fontSize: "1rem" }}>
+            <br />
+            <Typography variant="body1" mb={3} sx={{ fontSize: "1.5rem" }}>
               Trade Smart. Save More.
             </Typography>
             <br />
             <Typography
               sx={{
-                fontSize: "1rem",
+                fontSize: "1.2rem",
                 // fontWeight: 500,
                 lineHeight: 1.5,
                 mb: 3,
               }}
             >
               Invest. Trade. Grow. <br />
-              <Box
-                component="span"
-                sx={{ fontWeight: 700, fontSize: "1.5rem" }}
-              >
-                All at Flat
-                <span style={{ color: "#5633Cd" }}> ₹10/Order.</span>
+              <Box component="span" sx={{ fontWeight: 700, fontSize: "2rem" }}>
+                All at Flat{" "}
+                <span style={{ color: "#5633Cd", backgroundColor: "#e2dcf8" }}>
+                  ₹10/Order.
+                </span>
               </Box>
             </Typography>
 
             <Typography
               variant="body2"
               sx={{
-                color: "text.secondary",
+                // color: "text.secondary",
                 lineHeight: 1.8,
                 maxWidth: 500,
               }}
             >
               No complex pricing. No hidden costs. Just transparent rates.
-              <br />
+              <br /> <br />
               Whether you’re starting your investment journey or actively
-              trading,
-              <br />
-              <br />
-              PennyPal offers tools to help you manage and grow.
+              trading, PennyPal offers tools to help you manage and grow.
             </Typography>
           </Box>
 

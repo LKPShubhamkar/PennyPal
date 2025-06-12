@@ -49,18 +49,20 @@ const HomeThree = () => {
           </div>
 
           {/* Content Section */}
-          <div>
+          <Box>
             <Typography
-              variant="h4"
               fontWeight={700}
               color="#5633CD"
-              mb={1}
-              sx={{ lineHeight: 1.4 }}
+              mb={2}
+              sx={{
+                fontSize: { xs: "1.75rem", md: "2.25rem" },
+                lineHeight: 1.4,
+              }}
             >
               One Platform. All the Action.
             </Typography>
 
-            <Typography variant="body1" mb={4} color="text.secondary">
+            <Typography sx={{ fontSize: "1.05rem", mb: 4 }}>
               All within the PennyPal ecosystem – mobile + web.
             </Typography>
 
@@ -72,19 +74,29 @@ const HomeThree = () => {
                   spacing={2}
                   alignItems="flex-start"
                 >
-                  <Box>{feature.icon}</Box>
-                  <Box>
-                    <Typography variant="body2">
-                      <span style={{ color: "#5633CD", fontWeight: 600 }}>
-                        {feature.title}
-                      </span>{" "}
-                      – {feature.desc}
-                    </Typography>
+                  <Box
+                    sx={{
+                      width: 28,
+                      height: 28,
+                      fontSize: 20,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "#5633CD",
+                    }}
+                  >
+                    {feature.icon}
                   </Box>
+                  <Typography sx={{ fontSize: "1rem", lineHeight: 1.6 }}>
+                    <span style={{ color: "#5633CD", fontWeight: 600 }}>
+                      {feature.title}
+                    </span>{" "}
+                    – {feature.desc}
+                  </Typography>
                 </Stack>
               ))}
             </Stack>
-          </div>
+          </Box>
         </Grid>
       </Container>
     </Box>

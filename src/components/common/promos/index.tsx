@@ -7,7 +7,7 @@ const Promos = () => {
       sx={{
         py: 7,
         bgcolor: "#5633CD",
-        fontFamily: "Lato",
+
         maxWidth: "1100px", // reduce overall width manually (900px looks nice)
         mx: "auto", // center it
         px: { xs: 2, md: 4 }, // add small horizontal padding for mobile & desktop
@@ -42,7 +42,7 @@ const Promos = () => {
               sx={{
                 fontSize: "1rem",
                 lineHeight: 1.7,
-                fontFamily: "Lato",
+
                 color: "#fff",
               }}
             >

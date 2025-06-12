@@ -1,8 +1,9 @@
 import { Box, Typography, Stack, Container } from "@mui/material";
 import PhoneIcon from "@mui/icons-material/Phone";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+
 import EmailIcon from "@mui/icons-material/Email";
 import HomeSevenImg from "../../../../src/assets/HomeSeven.png"; // Your provided image
+import WhatsAppIcon from "../../../../src/assets/whatsapp.png"; // Your provided image
 
 const contactDetails = [
   {
@@ -12,7 +13,13 @@ const contactDetails = [
     link: "tel:02266351228",
   },
   {
-    icon: <WhatsAppIcon sx={{ color: "#5633CD" }} />,
+    icon: (
+      <img
+        src={WhatsAppIcon}
+        alt="WhatsApp"
+        style={{ width: 24, height: 24 }}
+      />
+    ),
     label: "WhatsApp",
     value: "9136764584",
     link: "https://wa.me/919136764584",
@@ -43,10 +50,10 @@ const HomeSeven = () => {
               // width: "100%",
             }}
           >
-            <Typography variant="h5" fontWeight={700} color="#5633CD">
+            <Typography variant="h4" fontWeight={700} color="#5633CD">
               Need Help?
             </Typography>
-            <Typography variant="h4" fontWeight={700} mb={4}>
+            <Typography variant="h3" fontWeight={700} mb={4}>
               We’re Always Around
             </Typography>
 

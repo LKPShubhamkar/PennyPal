@@ -9,10 +9,9 @@ const PhoneInput = () => {
         sx={{
           mb: 2,
           fontWeight: 500,
-          fontFamily: "Lato",
         }}
       >
-        Open Free Demat Account
+        Open Free Account
       </Typography>
       <Box
         sx={{
@@ -49,7 +48,7 @@ const PhoneInput = () => {
                   fontWeight: 500,
                   color: "#000",
                   fontSize: "1rem",
-                  fontFamily: "Lato",
+
                   mr: 1,
                   userSelect: "none",
                 }}

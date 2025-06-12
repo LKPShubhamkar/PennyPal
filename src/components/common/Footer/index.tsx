@@ -7,11 +7,11 @@ import {
   IconButton,
 } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
+import InstagramIcon from "../../../assets/instagram.png";
+import WhatsAppIcon from "../../../assets/whatsapp.png";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import XIcon from "@mui/icons-material/X";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import PhoneIcon from "@mui/icons-material/Phone";
 import PersonIcon from "@mui/icons-material/Person";
@@ -20,14 +20,14 @@ import PlayStore from "../../../assets/playstore.png";
 
 const Footer = () => {
   return (
-    <Box sx={{ bgcolor: "#fff", pt: 6, pb: 6, fontFamily: "Lato" }}>
+    <Box sx={{ bgcolor: "#fff", pt: 6, pb: 6 }}>
       <Container maxWidth="lg">
         {/* App & Social */}
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div>
             <Typography
               variant="subtitle1"
-              fontWeight={550}
+              fontWeight={600}
               fontSize={20}
               color="#5633CD"
               gutterBottom
@@ -52,7 +52,7 @@ const Footer = () => {
           <div>
             <Typography
               variant="subtitle1"
-              fontWeight={550}
+              fontWeight={600}
               fontSize={20}
               color="#5633CD"
               gutterBottom
@@ -60,31 +60,58 @@ const Footer = () => {
               Follow us on
             </Typography>
             <Stack direction="row" spacing={1}>
-              <IconButton>
+              <IconButton
+                target="_blank"
+                href="https://www.facebook.com/PennyPalindia"
+              >
                 <FacebookIcon color="primary" style={{ fontSize: "2.5rem" }} />
               </IconButton>
-              <IconButton>
-                <InstagramIcon
-                  sx={{ color: "#E1306C" }}
-                  style={{ fontSize: "2.5rem" }}
+              <IconButton
+                target="_blank"
+                href="https://www.instagram.com/pennypal_official"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={InstagramIcon}
+                  alt="Instagram"
+                  style={{
+                    width: "2.1rem",
+                    height: "2.1rem",
+                    objectFit: "contain",
+                  }}
                 />
               </IconButton>
-              <IconButton>
+
+              <IconButton
+                target="_blank"
+                href="https://www.linkedin.com/company/pennypalindia/"
+              >
                 <LinkedInIcon color="primary" style={{ fontSize: "2.5rem" }} />
               </IconButton>
-              <IconButton>
+              <IconButton
+                target="_blank"
+                href="https://twitter.com/PennyPal_India"
+              >
                 <XIcon style={{ fontSize: "2.5rem" }} />
               </IconButton>
-              <IconButton>
+              <IconButton
+                target="_blank"
+                href="https://www.youtube.com/@Pennypal_Official"
+              >
                 <YouTubeIcon
                   sx={{ color: "red" }}
                   style={{ fontSize: "2.5rem" }}
                 />
               </IconButton>
-              <IconButton>
-                <WhatsAppIcon
-                  sx={{ color: "#25D366" }}
-                  style={{ fontSize: "2.5rem" }}
+              <IconButton target="_blank" href="https://wa.me/919136764584">
+                <img
+                  src={WhatsAppIcon}
+                  alt="Instagram"
+                  style={{
+                    width: "2.5rem",
+                    height: "2.5rem",
+                    objectFit: "contain",
+                  }}
                 />
               </IconButton>
             </Stack>
@@ -123,7 +150,7 @@ const Footer = () => {
             </Typography>
           </div>
           <div>
-            <Typography fontWeight={550} mb={1} color="#5633CD" fontSize={20}>
+            <Typography fontWeight={600} mb={1} color="#5633CD" fontSize={20}>
               Corporate Office :
             </Typography>
             <Typography variant="body2" lineHeight={1.6} letterSpacing={1}>
@@ -134,7 +161,7 @@ const Footer = () => {
               Andheri (East), Mumbai-400059.
             </Typography>
             <Box mt={2}>
-              <Typography fontWeight={550} color="#5633CD" fontSize={20}>
+              <Typography fontWeight={600} color="#5633CD" fontSize={20}>
                 Have a query, write to us
               </Typography>
               <Stack direction="row" alignItems="center" spacing={1}>
@@ -149,7 +176,7 @@ const Footer = () => {
         <Box mt={4}>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div>
-              <Typography fontWeight={550} fontSize={20} color="#5633CD" mb={1}>
+              <Typography fontWeight={600} fontSize={20} color="#5633CD" mb={1}>
                 Compliance Officer Details
               </Typography>
               <Stack direction="row" alignItems="center" spacing={1}>
@@ -162,7 +189,7 @@ const Footer = () => {
               </Stack>
             </div>
             <div>
-              <Typography fontWeight={550} color="#5633CD" mb={1} fontSize={20}>
+              <Typography fontWeight={600} color="#5633CD" mb={1} fontSize={20}>
                 In case of grievances for Securities Broking / DP
               </Typography>
               <Stack direction="row" alignItems="center" spacing={1}>
@@ -175,29 +202,133 @@ const Footer = () => {
 
         {/* Other Links */}
         <Box mt={6}>
-          <Typography fontWeight={550} fontSize={20} color="#5633CD" mb={1}>
+          <Typography fontWeight={600} fontSize={20} color="#5633CD" mb={1}>
             Other Links
           </Typography>
 
           <Typography
             sx={{
               color: "#000",
-              fontSize: "14px",
-              //   textDecoration: "underline",
-              textUnderlineOffset: "2px",
-              cursor: "pointer",
+              fontSize: "16px",
+              a: {
+                textDecoration: "none",
+                color: "#000",
+                cursor: "pointer",
+                "&:hover": {
+                  color: "#5633CD",
+                },
+              },
             }}
           >
-            Privacy Policy Disclaimer | Advisory for Investors | Investor
-            Charter | Investor Information | Contact Us | Investors Education |
-            E-Voting | Smart ODR | Account Closure | KMP | SEBI Complaint
-            Redressal System | Customer Support |
+            <a
+              href="https://www.lkpsec.com/privacypolicy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Privacy Policy
+            </a>{" "}
+            |{"  "}
+            <a
+              href="https://www.lkpsec.com/disclaimer"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Disclaimer
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://www.lkpsec.com/advisoryinfo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Advisory for Investors
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://www.lkpsec.com/investor"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Investor Charter
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://www.lkpsec.com/investorinfo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Investor Information
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://lkpsec.com/contactus"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact Us
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://www.bseipf.com/investors_education.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Investors Education
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://evoting.cdslindia.com/Evoting/EvotingLogin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              E-Voting
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://smartodr.in/login"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Smart ODR
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://ekyc.lkponline.com/lkp/closure"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Account Closure
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://www.lkpsec.com/Kmp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              KMP
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://scores.gov.in/scores/Welcome.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              SEBI Complaint Redressal System
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://helpdesk.pennypal.in/portal/en/kb/pennypal"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Customer Support
+            </a>
           </Typography>
         </Box>
 
         {/* Disclaimer */}
         <Box mt={4}>
-          <Typography fontWeight={550} fontSize={20} color="#5633CD" mb={1}>
+          <Typography fontWeight={600} fontSize={20} color="#5633CD" mb={1}>
             Disclaimer
           </Typography>
           <Typography variant="body2" color="#000" lineHeight={1.8}>
@@ -219,7 +350,7 @@ const Footer = () => {
 
         {/* Attention Investors */}
         <Box mt={4}>
-          <Typography fontWeight={550} fontSize={20} color="#5633CD" mb={1}>
+          <Typography fontWeight={600} fontSize={20} color="#5633CD" mb={1}>
             Attention Investors
           </Typography>
           <Typography variant="body2" color="#000" lineHeight={1.8}>

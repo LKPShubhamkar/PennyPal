@@ -29,7 +29,7 @@ const ProductOne = () => {
               Everything You Need. All in One Place.
             </Typography>
 
-            <Typography variant="body1" color="text.secondary" mb={4}>
+            <Typography variant="body1" mb={4}>
               From long-term investing to active trading PennyPal offers the
               complete suite of financial products to meet your goals.
             </Typography>

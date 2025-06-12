@@ -27,7 +27,7 @@ const HomeTwo = () => {
   ];
 
   return (
-    <Box sx={{ py: 8, px: 2, bgcolor: "#f9f9fb" }}>
+    <Box sx={{ pt: 8, bgcolor: "#f9f9fb" }}>
       <Container maxWidth="lg">
         <Box
           sx={{
@@ -40,20 +40,29 @@ const HomeTwo = () => {
           {/* Left Section - Text & Features */}
           <Box sx={{ flex: 1 }}>
             <Typography
-              variant="h4"
               fontWeight={700}
-              mb={1}
-              sx={{ fontSize: { xs: "1.8rem", md: "2rem" } }}
-              color="#5633CD"
+              mb={2}
+              sx={{
+                fontSize: { xs: "1.75rem", md: "2.25rem" },
+                color: "#5633CD",
+              }}
             >
               Why PennyPal?
             </Typography>
-            <Typography variant="body1" mt={1} mb={2}>
+
+            <Typography
+              sx={{
+                fontSize: { xs: "1rem", md: "1.1rem" },
+                lineHeight: 1.7,
+                mb: 2,
+              }}
+            >
               PennyPal is designed for a wide range of users — from college
               students to active traders. We aim to make investing simple,
               accessible, and affordable.
             </Typography>
-            <Typography variant="body1" fontWeight={600} mb={4}>
+
+            <Typography fontWeight={600} sx={{ fontSize: "1.05rem", mb: 4 }}>
               Make the switch. Experience cost-effective investing.
             </Typography>
 
@@ -63,7 +72,7 @@ const HomeTwo = () => {
                   direction="row"
                   spacing={2}
                   key={index}
-                  alignItems="start"
+                  alignItems="flex-start"
                 >
                   <Box
                     sx={{
@@ -73,11 +82,12 @@ const HomeTwo = () => {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
+                      color: "#5633CD",
                     }}
                   >
                     {feature.icon}
                   </Box>
-                  <Typography variant="body1">
+                  <Typography sx={{ fontSize: "1rem", lineHeight: 1.6 }}>
                     <span style={{ color: "#5633CD", fontWeight: 600 }}>
                       {feature.title}
                     </span>{" "}
@@ -93,7 +103,7 @@ const HomeTwo = () => {
             <img
               src={HomeTwoImg}
               alt="PennyPal Mobile App"
-              style={{ width: "100%", maxWidth: 400 }}
+              style={{ width: "60%", maxWidth: 400 }}
             />
           </Box>
         </Box>

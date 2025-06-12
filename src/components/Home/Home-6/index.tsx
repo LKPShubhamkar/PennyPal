@@ -23,7 +23,7 @@ const HomeSix = () => {
               Your Journey Starts Now
             </Typography>
 
-            <Typography variant="body1" color="text.secondary" mb={3}>
+            <Typography variant="body1" mb={3}>
               Whether you're investing for the long haul or trading daily,{" "}
               <br />
               PennyPal gives you the tools to do more with less.

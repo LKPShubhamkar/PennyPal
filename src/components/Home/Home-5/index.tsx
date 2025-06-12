@@ -23,7 +23,7 @@ const HomeFive = () => {
           >
             Slick, Fast, Powerful App
           </Typography>
-          <Typography variant="body1" color="text.secondary">
+          <Typography variant="body1">
             Secure and Seamless experience.
           </Typography>
         </Stack>

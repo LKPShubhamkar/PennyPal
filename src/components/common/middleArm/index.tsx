@@ -27,7 +27,6 @@ const WhatWeStandFor = () => {
       sx={{
         py: 8,
         bgcolor: "#fff",
-        fontFamily: "Lato",
       }}
     >
       <Container maxWidth="lg">
@@ -39,7 +38,7 @@ const WhatWeStandFor = () => {
             fontWeight: 600,
             mb: 6,
             textAlign: "center",
-            fontFamily: "Lato",
+
             color: "#5633CD",
           }}
         >
@@ -67,10 +66,10 @@ const WhatWeStandFor = () => {
                 display: "flex",
                 alignItems: "center",
                 minHeight: "120px", // smaller box height
-                transition: "box-shadow 0.3s ease",
-                cursor: "pointer",
+                transition: "box-shadow 0.1s ease",
+                // cursor: "pointer",
                 "&:hover": {
-                  boxShadow: "0px 8px 16px rgba(0,0,0,0.1)", // subtle hover effect
+                  boxShadow: "0px 8px 16px #c792e6", // subtle hover effect
                 },
               }}
             >

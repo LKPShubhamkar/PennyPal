@@ -54,7 +54,7 @@ const ProductThree = () => {
                 key={i}
                 sx={{
                   fontSize: "6rem",
-                  fontWeight: 800,
+
                   color: "transparent",
                   WebkitTextStroke: "1px #5633CD",
                   height: `${wordHeight}px`,
@@ -75,7 +75,7 @@ const ProductThree = () => {
         </Typography>
 
         {/* Description */}
-        <Typography fontSize="1rem" color="text.secondary" mb={3}>
+        <Typography fontSize="1rem" mb={3}>
           Trade anywhere, anytime with PennyPal’s mobile and web platforms.
           Fast, secure, and equipped with useful features.
         </Typography>
