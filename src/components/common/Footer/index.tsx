@@ -63,13 +63,32 @@ const Footer = () => {
               <IconButton
                 target="_blank"
                 href="https://www.facebook.com/PennyPalindia"
+                sx={{
+                  "&:hover svg": {
+                    transform: "scale(1.2)",
+                  },
+                  "& svg": {
+                    transition: "transform 0.2s ease-in-out",
+                  },
+                }}
               >
-                <FacebookIcon color="primary" style={{ fontSize: "2.5rem" }} />
+                <FacebookIcon
+                  sx={{ fontSize: "2.5rem", color: "primary.main" }}
+                />
               </IconButton>
+
               <IconButton
                 target="_blank"
                 href="https://www.instagram.com/pennypal_official"
                 rel="noopener noreferrer"
+                sx={{
+                  "&:hover img": {
+                    transform: "scale(1.2)",
+                  },
+                  "& img": {
+                    transition: "transform 0.2s ease-in-out",
+                  },
+                }}
               >
                 <img
                   src={InstagramIcon}
@@ -85,28 +104,65 @@ const Footer = () => {
               <IconButton
                 target="_blank"
                 href="https://www.linkedin.com/company/pennypalindia/"
+                sx={{
+                  "&:hover svg": {
+                    transform: "scale(1.2)",
+                  },
+                  "& svg": {
+                    transition: "transform 0.2s ease-in-out",
+                  },
+                }}
               >
-                <LinkedInIcon color="primary" style={{ fontSize: "2.5rem" }} />
+                <LinkedInIcon
+                  sx={{ fontSize: "2.5rem", color: "primary.main" }}
+                />
               </IconButton>
+
               <IconButton
                 target="_blank"
                 href="https://twitter.com/PennyPal_India"
+                sx={{
+                  "&:hover svg": {
+                    transform: "scale(1.2)",
+                  },
+                  "& svg": {
+                    transition: "transform 0.2s ease-in-out",
+                  },
+                }}
               >
-                <XIcon style={{ fontSize: "2.5rem" }} />
+                <XIcon sx={{ fontSize: "2.5rem", color: "black" }} />
               </IconButton>
+
               <IconButton
                 target="_blank"
                 href="https://www.youtube.com/@Pennypal_Official"
+                sx={{
+                  "&:hover svg": {
+                    transform: "scale(1.2)",
+                  },
+                  "& svg": {
+                    transition: "transform 0.2s ease-in-out",
+                  },
+                }}
               >
-                <YouTubeIcon
-                  sx={{ color: "red" }}
-                  style={{ fontSize: "2.5rem" }}
-                />
+                <YouTubeIcon sx={{ fontSize: "2.5rem", color: "red" }} />
               </IconButton>
-              <IconButton target="_blank" href="https://wa.me/919136764584">
+
+              <IconButton
+                target="_blank"
+                href="https://wa.me/919136764584"
+                sx={{
+                  "&:hover img": {
+                    transform: "scale(1.2)",
+                  },
+                  "& img": {
+                    transition: "transform 0.2s ease-in-out",
+                  },
+                }}
+              >
                 <img
                   src={WhatsAppIcon}
-                  alt="Instagram"
+                  alt="WhatsApp"
                   style={{
                     width: "2.5rem",
                     height: "2.5rem",

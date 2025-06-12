@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, Stack, Container } from "@mui/material";
+import { Box, Typography, Stack, Container } from "@mui/material";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
@@ -30,26 +30,27 @@ const features = [
 
 const HomeThree = () => {
   return (
-    <Box sx={{ bgcolor: "#f9f9fb", py: 10 }}>
+    <Box sx={{ pt: 8, bgcolor: "#f9f9fb" }}>
       <Container maxWidth="lg">
-        <Grid container spacing={6} alignItems="center">
-          {/* Image Section */}
-          <div>
-            <Box
-              component="img"
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: "center",
+            gap: 6,
+          }}
+        >
+          {/* Left Section - Image */}
+          <Box sx={{ flex: 1, textAlign: "center" }}>
+            <img
               src={HomeThreeImg}
               alt="Trading Dashboard"
-              sx={{
-                width: "100%",
-                maxWidth: 550,
-                display: "block",
-                mx: { xs: "auto", md: 0 },
-              }}
+              style={{ width: "100%" }}
             />
-          </div>
+          </Box>
 
-          {/* Content Section */}
-          <Box>
+          {/* Right Section - Content */}
+          <Box sx={{ flex: 1 }}>
             <Typography
               fontWeight={700}
               color="#5633CD"
@@ -97,7 +98,7 @@ const HomeThree = () => {
               ))}
             </Stack>
           </Box>
-        </Grid>
+        </Box>
       </Container>
     </Box>
   );

@@ -1,8 +1,8 @@
 import { Box, Paper, Stack, Typography } from "@mui/material";
-import PricingTwoImg from "../../../assets/PricingTwo.png";
 import AppStore from "../../../assets/appstore.png";
 import PlayStore from "../../../assets/playstore.png";
 import webBroswer from "../../../assets/webroswer.png";
+import CustomTable from "../../common/Table";
 
 const features = [
   "No Account Opening Fee",
@@ -27,13 +27,16 @@ const Pricingtwo = () => {
         Brokerage Structure
       </Typography>
 
-      <Box sx={{ flex: 1, minWidth: 300, textAlign: "center" }}>
+      {/* <Box sx={{ flex: 1, minWidth: 300, textAlign: "center" }}>
         <img
           src={PricingTwoImg}
           alt="Pricing Illustration"
           style={{ maxWidth: "100%", height: "auto" }}
         />
-      </Box>
+      </Box> */}
+      {/* <Box> */}
+      <CustomTable />
+      {/* </Box> */}
 
       <Box
         sx={{

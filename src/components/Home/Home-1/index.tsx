@@ -1,5 +1,4 @@
-import { Box, Typography, Container } from "@mui/material";
-import HomeoneImg from "../../../../src/assets/HomeOne.png";
+import { Box, Typography, Container, Paper, Button } from "@mui/material";
 
 const HomeOne = () => {
   return (
@@ -63,7 +62,7 @@ const HomeOne = () => {
           </Box>
 
           {/* Right Side - Image Only */}
-          <Box sx={{ flex: 1, display: "flex", justifyContent: "center" }}>
+          {/* <Box sx={{ flex: 1, display: "flex", justifyContent: "center" }}>
             <img
               src={HomeoneImg}
               alt="Investing App"
@@ -74,6 +73,131 @@ const HomeOne = () => {
                 display: "block",
               }}
             />
+          </Box> */}
+          <Box
+            sx={{
+              width: "25rem",
+              height: "25rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              bgcolor: "transparent",
+              p: 2,
+              position: "relative",
+            }}
+          >
+            {/* Rotated shadow box */}
+            <Box
+              sx={{
+                position: "absolute",
+
+                // left: 18, // adjust as needed for shadow offset
+                width: "90%",
+                height: "75%",
+                bgcolor: "#5633CD",
+                borderRadius: 5,
+                // filter: "blur(2px)",
+                transform: "rotate(8deg)",
+                zIndex: 0,
+              }}
+            />
+            {/* Main card */}
+            <Paper
+              elevation={8}
+              sx={{
+                borderRadius: 5,
+                p: 4,
+                width: 380,
+                position: "relative",
+                bgcolor: "#F1EDFF",
+                textAlign: "center",
+                zIndex: 1,
+              }}
+            >
+              <Typography
+                variant="h4"
+                sx={{
+                  fontWeight: 800,
+                  color: "#5633CD",
+                  mb: 1,
+                  letterSpacing: "0.01em",
+                }}
+              >
+                Invest. Trade. Grow.
+              </Typography>
+              <Typography
+                sx={{
+                  color: "#222",
+                  fontSize: "1.05rem",
+                  mb: 3,
+                }}
+              >
+                A trusted partner for smart trading and investing.
+              </Typography>
+              {/* <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  mb: 2,
+                  gap: 1,
+                }}
+              >
+                <TextField
+                  placeholder="Enter your mobile number"
+                  variant="outlined"
+                  type="tel"
+                  inputProps={{
+                    inputMode: "numeric",
+                    pattern: "[0-9]*",
+                  }}
+                  sx={{
+                    flexGrow: 1,
+                    "& .MuiOutlinedInput-root": {
+                      borderRadius: "22px",
+                    },
+                    "& .MuiOutlinedInput-input": {
+                      padding: "12px",
+                    },
+                  }}
+                  InputProps={{
+                    startAdornment: (
+                      <Typography
+                        sx={{
+                          fontWeight: 500,
+                          color: "#000",
+                          fontSize: "1rem",
+
+                          mr: 1,
+                          userSelect: "none",
+                        }}
+                      >
+                        +91
+                      </Typography>
+                    ),
+                    endAdornment: null, // remove adornment here
+                  }}
+                />
+              </Box> */}
+              <Button
+                sx={{
+                  border: "1px solid #5633CD",
+                  color: "#5633CD",
+                  borderRadius: "30px",
+                  width: "100%",
+                  fontSize: "1rem",
+                  height: 44,
+                  boxShadow: "0px 0px 5px #c792e6",
+
+                  mb: 2,
+                }}
+              >
+                Open Free Account
+              </Button>
+              <Typography sx={{ fontSize: "0.75rem" }}>
+                I agree to PennyPal Terms and Conditions and Privacy Policy by
+                continuing.
+              </Typography>
+            </Paper>
           </Box>
         </Box>
       </Container>
