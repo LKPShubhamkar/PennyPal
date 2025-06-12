@@ -53,7 +53,7 @@ const ProductThree = () => {
               <Typography
                 key={i}
                 sx={{
-                  fontSize: "6rem",
+                  fontSize: { xs: "4.5rem", md: "6rem" },
 
                   color: "transparent",
                   WebkitTextStroke: "1px #5633CD",

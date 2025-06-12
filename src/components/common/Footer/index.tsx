@@ -6,6 +6,7 @@ import {
   Stack,
   IconButton,
 } from "@mui/material";
+import React from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "../../../assets/instagram.png";
 import WhatsAppIcon from "../../../assets/whatsapp.png";
@@ -18,17 +19,53 @@ import PersonIcon from "@mui/icons-material/Person";
 import AppStore from "../../../assets/appstore.png";
 import PlayStore from "../../../assets/playstore.png";
 
+const footerLinks = [
+  { label: "Privacy Policy", url: "https://www.lkpsec.com/privacypolicy" },
+  { label: "Disclaimer", url: "https://www.lkpsec.com/disclaimer" },
+  {
+    label: "Advisory for Investors",
+    url: "https://www.lkpsec.com/advisoryinfo",
+  },
+  { label: "Investor Charter", url: "https://www.lkpsec.com/investor" },
+  { label: "Investor Information", url: "https://www.lkpsec.com/investorinfo" },
+  { label: "Contact Us", url: "https://lkpsec.com/contactus" },
+  {
+    label: "Investors Education",
+    url: "https://www.bseipf.com/investors_education.html",
+  },
+  {
+    label: "E-Voting",
+    url: "https://evoting.cdslindia.com/Evoting/EvotingLogin",
+  },
+  { label: "Smart ODR", url: "https://smartodr.in/login" },
+  { label: "Account Closure", url: "https://ekyc.lkponline.com/lkp/closure" },
+  { label: "KMP", url: "https://www.lkpsec.com/Kmp" },
+  {
+    label: "SEBI Complaint Redressal System",
+    url: "https://scores.gov.in/scores/Welcome.html",
+  },
+  {
+    label: "Customer Support",
+    url: "https://helpdesk.pennypal.in/portal/en/kb/pennypal",
+  },
+];
+
 const Footer = () => {
   return (
     <Box sx={{ bgcolor: "#fff", pt: 6, pb: 6 }}>
       <Container maxWidth="lg">
         {/* App & Social */}
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div>
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          justifyContent="space-between"
+          alignItems={{ xs: "flex-start", sm: "center" }}
+          spacing={4}
+        >
+          <Box>
             <Typography
               variant="subtitle1"
               fontWeight={600}
-              fontSize={20}
+              fontSize={{ xs: 18, sm: 20 }}
               color="#5633CD"
               gutterBottom
             >
@@ -48,46 +85,37 @@ const Footer = () => {
                 sx={{ height: 40 }}
               />
             </Stack>
-          </div>
-          <div>
+          </Box>
+          <Box>
             <Typography
               variant="subtitle1"
               fontWeight={600}
-              fontSize={20}
+              fontSize={{ xs: 18, sm: 20 }}
               color="#5633CD"
               gutterBottom
             >
               Follow us on
             </Typography>
-            <Stack direction="row" spacing={1}>
+            <Stack direction="row">
               <IconButton
                 target="_blank"
                 href="https://www.facebook.com/PennyPalindia"
                 sx={{
-                  "&:hover svg": {
-                    transform: "scale(1.2)",
-                  },
-                  "& svg": {
-                    transition: "transform 0.2s ease-in-out",
-                  },
+                  "&:hover svg": { transform: "scale(1.2)" },
+                  "& svg": { transition: "transform 0.2s ease-in-out" },
                 }}
               >
                 <FacebookIcon
                   sx={{ fontSize: "2.5rem", color: "primary.main" }}
                 />
               </IconButton>
-
               <IconButton
                 target="_blank"
                 href="https://www.instagram.com/pennypal_official"
                 rel="noopener noreferrer"
                 sx={{
-                  "&:hover img": {
-                    transform: "scale(1.2)",
-                  },
-                  "& img": {
-                    transition: "transform 0.2s ease-in-out",
-                  },
+                  "&:hover img": { transform: "scale(1.2)" },
+                  "& img": { transition: "transform 0.2s ease-in-out" },
                 }}
               >
                 <img
@@ -100,64 +128,44 @@ const Footer = () => {
                   }}
                 />
               </IconButton>
-
               <IconButton
                 target="_blank"
                 href="https://www.linkedin.com/company/pennypalindia/"
                 sx={{
-                  "&:hover svg": {
-                    transform: "scale(1.2)",
-                  },
-                  "& svg": {
-                    transition: "transform 0.2s ease-in-out",
-                  },
+                  "&:hover svg": { transform: "scale(1.2)" },
+                  "& svg": { transition: "transform 0.2s ease-in-out" },
                 }}
               >
                 <LinkedInIcon
                   sx={{ fontSize: "2.5rem", color: "primary.main" }}
                 />
               </IconButton>
-
               <IconButton
                 target="_blank"
                 href="https://twitter.com/PennyPal_India"
                 sx={{
-                  "&:hover svg": {
-                    transform: "scale(1.2)",
-                  },
-                  "& svg": {
-                    transition: "transform 0.2s ease-in-out",
-                  },
+                  "&:hover svg": { transform: "scale(1.2)" },
+                  "& svg": { transition: "transform 0.2s ease-in-out" },
                 }}
               >
                 <XIcon sx={{ fontSize: "2.5rem", color: "black" }} />
               </IconButton>
-
               <IconButton
                 target="_blank"
                 href="https://www.youtube.com/@Pennypal_Official"
                 sx={{
-                  "&:hover svg": {
-                    transform: "scale(1.2)",
-                  },
-                  "& svg": {
-                    transition: "transform 0.2s ease-in-out",
-                  },
+                  "&:hover svg": { transform: "scale(1.2)" },
+                  "& svg": { transition: "transform 0.2s ease-in-out" },
                 }}
               >
                 <YouTubeIcon sx={{ fontSize: "2.5rem", color: "red" }} />
               </IconButton>
-
               <IconButton
                 target="_blank"
                 href="https://wa.me/919136764584"
                 sx={{
-                  "&:hover img": {
-                    transform: "scale(1.2)",
-                  },
-                  "& img": {
-                    transition: "transform 0.2s ease-in-out",
-                  },
+                  "&:hover img": { transform: "scale(1.2)" },
+                  "& img": { transition: "transform 0.2s ease-in-out" },
                 }}
               >
                 <img
@@ -171,8 +179,8 @@ const Footer = () => {
                 />
               </IconButton>
             </Stack>
-          </div>
-        </div>
+          </Box>
+        </Stack>
 
         {/* Divider */}
         <Box my={4}>
@@ -180,13 +188,20 @@ const Footer = () => {
         </Box>
 
         {/* Info + Contact */}
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div>
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          justifyContent="space-between"
+          spacing={4}
+          alignItems="flex-start"
+          textAlign={{ xs: "left", sm: "inherit" }}
+        >
+          <Box flex={1}>
             <Typography
               variant="body2"
               lineHeight={1.8}
               letterSpacing={1}
               fontWeight={400}
+              fontSize={{ xs: 13, sm: 15 }}
             >
               LKP Securities Ltd: Single SEBI registration number for
               NSE/BSE/MSEI: INZ000216033
@@ -204,12 +219,22 @@ const Footer = () => {
               <br />
               Fax No.: +91 22 2287 4787
             </Typography>
-          </div>
-          <div>
-            <Typography fontWeight={600} mb={1} color="#5633CD" fontSize={20}>
+          </Box>
+          <Box flex={1}>
+            <Typography
+              fontWeight={600}
+              mb={1}
+              color="#5633CD"
+              fontSize={{ xs: 18, sm: 20 }}
+            >
               Corporate Office :
             </Typography>
-            <Typography variant="body2" lineHeight={1.6} letterSpacing={1}>
+            <Typography
+              variant="body2"
+              lineHeight={1.6}
+              letterSpacing={1}
+              fontSize={{ xs: 13, sm: 15 }}
+            >
               2nd Floor, Gala Impecca, Andheri Kurla Road,
               <br />
               Near Hotel Courtyard Marriott, Chakala,
@@ -217,55 +242,87 @@ const Footer = () => {
               Andheri (East), Mumbai-400059.
             </Typography>
             <Box mt={2}>
-              <Typography fontWeight={600} color="#5633CD" fontSize={20}>
+              <Typography
+                fontWeight={600}
+                color="#5633CD"
+                fontSize={{ xs: 18, sm: 20 }}
+              >
                 Have a query, write to us
               </Typography>
               <Stack direction="row" alignItems="center" spacing={1}>
                 <MailOutlineIcon fontSize="small" />
-                <Typography variant="body2">helpdesk@pennypal.in</Typography>
+                <Typography variant="body2" fontSize={{ xs: 13, sm: 15 }}>
+                  helpdesk@pennypal.in
+                </Typography>
               </Stack>
             </Box>
-          </div>
-        </div>
+          </Box>
+        </Stack>
 
         {/* Compliance + Grievance */}
         <Box mt={4}>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <div>
-              <Typography fontWeight={600} fontSize={20} color="#5633CD" mb={1}>
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            justifyContent="space-between"
+            spacing={4}
+            alignItems="flex-start"
+            textAlign={{ xs: "left", sm: "inherit" }}
+          >
+            <Box flex={1}>
+              <Typography
+                fontWeight={600}
+                fontSize={{ xs: 18, sm: 20 }}
+                color="#5633CD"
+                mb={1}
+              >
                 Compliance Officer Details
               </Typography>
               <Stack direction="row" alignItems="center" spacing={1}>
                 <PersonIcon fontSize="small" />
-                <Typography variant="body1">Mr. Ritesh Kumar Tiwari</Typography>
+                <Typography variant="body1" fontSize={{ xs: 14, sm: 16 }}>
+                  Mr. Ritesh Kumar Tiwari
+                </Typography>
               </Stack>
               <Stack direction="row" alignItems="center" spacing={1}>
                 <PhoneIcon fontSize="small" />
-                <Typography variant="body1">022-66353110</Typography>
+                <Typography variant="body1" fontSize={{ xs: 14, sm: 16 }}>
+                  022-66353110
+                </Typography>
               </Stack>
-            </div>
-            <div>
-              <Typography fontWeight={600} color="#5633CD" mb={1} fontSize={20}>
+            </Box>
+            <Box flex={1}>
+              <Typography
+                fontWeight={600}
+                color="#5633CD"
+                mb={1}
+                fontSize={{ xs: 18, sm: 20 }}
+              >
                 In case of grievances for Securities Broking / DP
               </Typography>
               <Stack direction="row" alignItems="center" spacing={1}>
                 <MailOutlineIcon fontSize="small" />
-                <Typography variant="body1">grievances@lkpsec.com</Typography>
+                <Typography variant="body1" fontSize={{ xs: 14, sm: 16 }}>
+                  grievances@lkpsec.com
+                </Typography>
               </Stack>
-            </div>
-          </div>
+            </Box>
+          </Stack>
         </Box>
 
         {/* Other Links */}
         <Box mt={6}>
-          <Typography fontWeight={600} fontSize={20} color="#5633CD" mb={1}>
+          <Typography
+            fontWeight={600}
+            fontSize={{ xs: 18, sm: 20 }}
+            color="#5633CD"
+            mb={1}
+          >
             Other Links
           </Typography>
-
           <Typography
             sx={{
               color: "#000",
-              fontSize: "16px",
+              fontSize: { xs: "13px", sm: "16px" },
               a: {
                 textDecoration: "none",
                 color: "#000",
@@ -276,118 +333,33 @@ const Footer = () => {
               },
             }}
           >
-            <a
-              href="https://www.lkpsec.com/privacypolicy"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Privacy Policy
-            </a>{" "}
-            |{"  "}
-            <a
-              href="https://www.lkpsec.com/disclaimer"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Disclaimer
-            </a>{" "}
-            |{" "}
-            <a
-              href="https://www.lkpsec.com/advisoryinfo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Advisory for Investors
-            </a>{" "}
-            |{" "}
-            <a
-              href="https://www.lkpsec.com/investor"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Investor Charter
-            </a>{" "}
-            |{" "}
-            <a
-              href="https://www.lkpsec.com/investorinfo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Investor Information
-            </a>{" "}
-            |{" "}
-            <a
-              href="https://lkpsec.com/contactus"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Contact Us
-            </a>{" "}
-            |{" "}
-            <a
-              href="https://www.bseipf.com/investors_education.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Investors Education
-            </a>{" "}
-            |{" "}
-            <a
-              href="https://evoting.cdslindia.com/Evoting/EvotingLogin"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              E-Voting
-            </a>{" "}
-            |{" "}
-            <a
-              href="https://smartodr.in/login"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Smart ODR
-            </a>{" "}
-            |{" "}
-            <a
-              href="https://ekyc.lkponline.com/lkp/closure"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Account Closure
-            </a>{" "}
-            |{" "}
-            <a
-              href="https://www.lkpsec.com/Kmp"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              KMP
-            </a>{" "}
-            |{" "}
-            <a
-              href="https://scores.gov.in/scores/Welcome.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              SEBI Complaint Redressal System
-            </a>{" "}
-            |{" "}
-            <a
-              href="https://helpdesk.pennypal.in/portal/en/kb/pennypal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Customer Support
-            </a>
+            {footerLinks.map((link, index) => (
+              <React.Fragment key={link.label}>
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  {link.label}
+                </a>
+                {index !== footerLinks.length - 1 && " | "}
+              </React.Fragment>
+            ))}
           </Typography>
         </Box>
 
         {/* Disclaimer */}
         <Box mt={4}>
-          <Typography fontWeight={600} fontSize={20} color="#5633CD" mb={1}>
+          <Typography
+            fontWeight={600}
+            fontSize={{ xs: 18, sm: 20 }}
+            color="#5633CD"
+            mb={1}
+          >
             Disclaimer
           </Typography>
-          <Typography variant="body2" color="#000" lineHeight={1.8}>
+          <Typography
+            variant="body2"
+            color="#000"
+            lineHeight={1.8}
+            fontSize={{ xs: 13, sm: 15 }}
+          >
             Investments in securities market are subject to market risk, read
             all the related documents carefully before investing. The
             disseminated stock are exemplary, and not recommendations.
@@ -406,10 +378,20 @@ const Footer = () => {
 
         {/* Attention Investors */}
         <Box mt={4}>
-          <Typography fontWeight={600} fontSize={20} color="#5633CD" mb={1}>
+          <Typography
+            fontWeight={600}
+            fontSize={{ xs: 18, sm: 20 }}
+            color="#5633CD"
+            mb={1}
+          >
             Attention Investors
           </Typography>
-          <Typography variant="body2" color="#000" lineHeight={1.8}>
+          <Typography
+            variant="body2"
+            color="#000"
+            lineHeight={1.8}
+            fontSize={{ xs: 13, sm: 15 }}
+          >
             Stock Brokers can accept securities as Margin from Clients only by
             way of pledge in the depository system w.e.f. September 1, 2020.
             Update your mobile number & email ID with your Stock Broker /
@@ -427,7 +409,12 @@ const Footer = () => {
 
         {/* Arbitration */}
         <Box mt={4}>
-          <Typography variant="body2" display="block" color="#000">
+          <Typography
+            variant="body2"
+            display="block"
+            color="#000"
+            fontSize={{ xs: 13, sm: 15 }}
+          >
             Arbitration Mechanism on the Stock Exchange
           </Typography>
         </Box>

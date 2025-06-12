@@ -12,7 +12,7 @@ const PhoneInput = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          maxWidth: "50%",
+          maxWidth: { xs: "100%", md: "50%" },
         }}
       >
         <Typography

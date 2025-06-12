@@ -60,7 +60,7 @@ const tabOptions = Object.keys(featureContent) as TabKey[];
 const ProductTwo = () => {
   const [activeTab, setActiveTab] = useState<TabKey>("Equity Trading");
 
-  const { title, subtitle, features } = featureContent[activeTab];
+  const { subtitle, features } = featureContent[activeTab];
 
   return (
     <Box sx={{ py: 8, bgcolor: "#f9f9fb" }}>

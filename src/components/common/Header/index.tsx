@@ -1,4 +1,15 @@
-import { AppBar, Toolbar, Button, Box, Container } from "@mui/material";
+import { useState } from "react";
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  Box,
+  Container,
+  IconButton,
+  Menu,
+  MenuItem,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
@@ -11,6 +22,11 @@ const navLinks = [
 
 const Header = () => {
   const location = useLocation();
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  // Open/close handlers for mobile menu
+  const handleMenuOpen = (event: any) => setAnchorEl(event.currentTarget);
+  const handleMenuClose = () => setAnchorEl(null);
 
   return (
     <AppBar
@@ -31,8 +47,13 @@ const Header = () => {
             </Link>
           </Box>
 
-          {/* Menu Items */}
-          <Box display="flex" alignItems="center">
+          {/* Desktop Menu */}
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+              alignItems: "center",
+            }}
+          >
             {navLinks.map((item) => {
               const isActive = location.pathname === item.path;
               return (
@@ -62,23 +83,67 @@ const Header = () => {
             })}
           </Box>
 
-          {/* Action Buttons */}
-          <Box display="flex" alignItems="center">
-            {/* <Button
-              variant="outlined"
-              sx={{
-                borderRadius: "37px",
-                borderColor: "#5633CD",
-                color: "#000",
-                textTransform: "none",
-                fontWeight: 500,
-                px: 5,
-                py: 1,
-                mr: 1,
+          {/* Mobile Hamburger */}
+          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+            <IconButton
+              edge="end"
+              color="inherit"
+              aria-label="menu"
+              onClick={handleMenuOpen}
+              sx={{ ml: 1 }}
+            >
+              <MenuIcon sx={{ color: "#5633CD", fontSize: 32 }} />
+            </IconButton>
+            <Menu
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
+              onClose={handleMenuClose}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
               }}
             >
-              Login
-            </Button> */}
+              {navLinks.map((item) => (
+                <MenuItem
+                  key={item.label}
+                  component={Link}
+                  to={item.path}
+                  onClick={handleMenuClose}
+                  selected={location.pathname === item.path}
+                  sx={{
+                    color: location.pathname === item.path ? "#5633CD" : "#000",
+                    fontWeight: location.pathname === item.path ? 600 : 400,
+                  }}
+                >
+                  {item.label}
+                </MenuItem>
+              ))}
+              <MenuItem
+                component="a"
+                href="https://ekyc.pennypal.in/lkpsec/individual_pennypal"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: "#5633CD",
+                  fontWeight: 600,
+                  mt: 1,
+                  border: "1px solid #5633CD",
+                  borderRadius: "30px",
+                  justifyContent: "center",
+                  textAlign: "center",
+                }}
+              >
+                Open Free Account
+              </MenuItem>
+            </Menu>
+          </Box>
+
+          {/* Desktop Action Button */}
+          <Box display={{ xs: "none", md: "flex" }} alignItems="center">
             <Button
               variant="contained"
               sx={{
