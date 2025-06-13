@@ -31,7 +31,7 @@ const Header = () => {
   return (
     <AppBar
       position="sticky"
-      elevation={0}
+      elevation={1}
       sx={{
         bgcolor: "#fff",
         borderBottom: "1px solid #eee",
@@ -130,11 +130,11 @@ const Header = () => {
                 sx={{
                   color: "#5633CD",
                   fontWeight: 600,
-                  mt: 1,
                   border: "1px solid #5633CD",
                   borderRadius: "30px",
                   justifyContent: "center",
                   textAlign: "center",
+                  mx: 1,
                 }}
               >
                 Open Free Account
@@ -153,7 +153,7 @@ const Header = () => {
                 fontWeight: 500,
                 px: 3,
                 py: 1,
-                "&:hover": { bgcolor: "#5633CD" },
+                "&:hover": { bgcolor: "#8169e0" },
               }}
               target="_blank"
               href="https://ekyc.pennypal.in/lkpsec/individual_pennypal"

@@ -11,7 +11,7 @@ const featureList = [
 
 const HomeFour = () => {
   return (
-    <Box sx={{ bgcolor: "#f9f9fb", py: 10, px: 2 }}>
+    <Box sx={{ bgcolor: "#f9f9fb", py: 10 }}>
       <Stack
         direction={{ xs: "column", md: "row" }}
         alignItems="center"

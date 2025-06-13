@@ -1,3 +1,4 @@
+import { Container } from "@mui/material";
 import HomeOne from "../../components/Home/Home-1";
 import HomeTwo from "../../components/Home/Home-2";
 import HomeThree from "../../components/Home/Home-3";
@@ -8,7 +9,7 @@ import HomeSeven from "../../components/Home/Home-7";
 
 const Home = () => {
   return (
-    <div>
+    <Container maxWidth="lg">
       <HomeOne />
       <HomeTwo />
       <HomeThree />
@@ -16,7 +17,7 @@ const Home = () => {
       <HomeFive />
       <HomeSix />
       <HomeSeven />
-    </div>
+    </Container>
   );
 };
 

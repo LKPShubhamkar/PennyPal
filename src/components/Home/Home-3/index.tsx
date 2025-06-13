@@ -30,76 +30,74 @@ const features = [
 
 const HomeThree = () => {
   return (
-    <Box sx={{ pt: 8, bgcolor: "#f9f9fb" }}>
-      <Container maxWidth="lg">
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            alignItems: "center",
-            gap: 6,
-          }}
-        >
-          {/* Left Section - Image */}
-          <Box sx={{ flex: 1, textAlign: "center" }}>
-            <img
-              src={HomeThreeImg}
-              alt="Trading Dashboard"
-              style={{ width: "100%" }}
-            />
-          </Box>
-
-          {/* Right Section - Content */}
-          <Box sx={{ flex: 1 }}>
-            <Typography
-              fontWeight={700}
-              color="#5633CD"
-              mb={2}
-              sx={{
-                fontSize: { xs: "1.75rem", md: "2.25rem" },
-                lineHeight: 1.4,
-              }}
-            >
-              One Platform. All the Action.
-            </Typography>
-
-            <Typography sx={{ fontSize: "1.05rem", mb: 4 }}>
-              All within the PennyPal ecosystem – mobile + web.
-            </Typography>
-
-            <Stack spacing={3}>
-              {features.map((feature, idx) => (
-                <Stack
-                  key={idx}
-                  direction="row"
-                  spacing={2}
-                  alignItems="flex-start"
-                >
-                  <Box
-                    sx={{
-                      width: 28,
-                      height: 28,
-                      fontSize: 20,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "#5633CD",
-                    }}
-                  >
-                    {feature.icon}
-                  </Box>
-                  <Typography sx={{ fontSize: "1rem", lineHeight: 1.6 }}>
-                    <span style={{ color: "#5633CD", fontWeight: 600 }}>
-                      {feature.title}
-                    </span>{" "}
-                    – {feature.desc}
-                  </Typography>
-                </Stack>
-              ))}
-            </Stack>
-          </Box>
+    <Box sx={{ pt: 8 }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "center",
+          gap: 6,
+        }}
+      >
+        {/* Left Section - Image */}
+        <Box sx={{ flex: 1, textAlign: "center" }}>
+          <img
+            src={HomeThreeImg}
+            alt="Trading Dashboard"
+            style={{ width: "100%" }}
+          />
         </Box>
-      </Container>
+
+        {/* Right Section - Content */}
+        <Box sx={{ flex: 1 }}>
+          <Typography
+            fontWeight={700}
+            color="#5633CD"
+            mb={2}
+            sx={{
+              fontSize: { xs: "1.75rem", md: "2.25rem" },
+              lineHeight: 1.4,
+            }}
+          >
+            One Platform. All the Action.
+          </Typography>
+
+          <Typography sx={{ fontSize: "1.05rem", mb: 4 }}>
+            All within the PennyPal ecosystem – mobile + web.
+          </Typography>
+
+          <Stack spacing={3}>
+            {features.map((feature, idx) => (
+              <Stack
+                key={idx}
+                direction="row"
+                spacing={2}
+                alignItems="flex-start"
+              >
+                <Box
+                  sx={{
+                    width: 28,
+                    height: 28,
+                    fontSize: 20,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#5633CD",
+                  }}
+                >
+                  {feature.icon}
+                </Box>
+                <Typography sx={{ fontSize: "1rem", lineHeight: 1.6 }}>
+                  <span style={{ color: "#5633CD", fontWeight: 600 }}>
+                    {feature.title}
+                  </span>{" "}
+                  – {feature.desc}
+                </Typography>
+              </Stack>
+            ))}
+          </Stack>
+        </Box>
+      </Box>
     </Box>
   );
 };

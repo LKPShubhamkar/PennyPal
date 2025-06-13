@@ -63,14 +63,14 @@ const ProductTwo = () => {
   const { subtitle, features } = featureContent[activeTab];
 
   return (
-    <Box sx={{ py: 8, bgcolor: "#f9f9fb" }}>
+    <Box sx={{ minHeight: "50vh" }}>
       {/* Tabs */}
       <Stack
         direction="row"
         justifyContent="space-between"
         flexWrap="wrap"
         gap={2}
-        mb={4}
+        mb={7}
       >
         {tabOptions.map((tab) => (
           <Button
@@ -96,7 +96,7 @@ const ProductTwo = () => {
         align="center"
         fontWeight={600}
         color="#5633CD"
-        mb={4}
+        mb={6}
       >
         {subtitle}
       </Typography>
