@@ -2,8 +2,13 @@ import { Box, Typography, Stack, Paper } from "@mui/material";
 import AppStore from "../../../assets/appstore.png";
 import PlayStore from "../../../assets/playstore.png";
 import PlatformThreeImg from "../../../assets/PlatformThree.png";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 
 const PlatformThree = () => {
+  // Inside your component
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const featuresLeft = [
     "Best for active traders & analysts",
     "Reliable performance during market hours",
@@ -60,22 +65,27 @@ const PlatformThree = () => {
           gutterBottom
           sx={{ fontSize: { xs: "28px", md: "36px" } }}
         >
-          PennyPal Mobile App
+          PennyPal Web
         </Typography>
         <Typography
           variant="h6"
           fontWeight={500}
           sx={{ fontSize: { xs: "18px", md: "22px" }, mb: 4 }}
         >
-          What makes it special?
+          Designed for active traders.
         </Typography>
 
         <Stack
           direction={{ xs: "column", sm: "row" }}
-          spacing={4}
+          spacing={isMobile ? 0 : 4}
           flexWrap="nowrap"
         >
-          <Stack spacing={2}>
+          <Stack
+            spacing={2}
+            sx={{
+              mb: { xs: 2, sm: 0 }, // Add margin only when stacked
+            }}
+          >
             {featuresLeft.map((text, idx) => (
               <Paper
                 key={idx}
@@ -120,18 +130,30 @@ const PlatformThree = () => {
 
         {/* Store Buttons */}
         <Stack direction="row" spacing={2} mt={4}>
-          <Box
-            component="img"
-            src={AppStore}
-            alt="App Store"
-            sx={{ height: 48 }}
-          />
-          <Box
-            component="img"
-            src={PlayStore}
-            alt="Google Play"
-            sx={{ height: 48 }}
-          />
+          <a
+            href="https://apps.apple.com/in/app/lkp-pennypal/id6740027396"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Box
+              component="img"
+              src={AppStore}
+              alt="App Store"
+              sx={{ height: 40 }}
+            />
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.lkpsec.pennypal&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Box
+              component="img"
+              src={PlayStore}
+              alt="Google Play"
+              sx={{ height: 40 }}
+            />
+          </a>
         </Stack>
       </Box>
     </Box>

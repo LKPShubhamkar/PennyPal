@@ -40,8 +40,21 @@ const HomeSix = () => {
 
           {/* Store Buttons */}
           <Box sx={{ display: "flex", gap: 2, pt: 3 }}>
-            <img src={AppStore} alt="App Store" width={130} />
-            <img src={PlayStore} alt="Play Store" width={130} />
+            <a
+              href="https://apps.apple.com/in/app/lkp-pennypal/id6740027396"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={AppStore} alt="App Store" width={130} />
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.lkpsec.pennypal&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <img src={PlayStore} alt="Play Store" width={130} />
+            </a>
           </Box>
         </Box>
 

@@ -7,20 +7,34 @@ const PricingOne = () => {
     <Box
       sx={{
         display: "flex",
+        flexDirection: { xs: "column", md: "row" },
         alignItems: "center",
-        flexWrap: "wrap",
         bgcolor: "#fff",
         minHeight: "80vh",
+        px: { xs: 2, md: 6 },
+        py: { xs: 4, md: 0 },
       }}
     >
       {/* Left Section */}
-      <Box sx={{ flex: 1, minWidth: 300, pr: { md: 6 }, mb: { xs: 4, md: 0 } }}>
-        <Typography fontSize="1.8em" fontWeight={500} mb={5}>
+      <Box
+        sx={{
+          flex: 1,
+          minWidth: 280,
+          pr: { md: 6 },
+          mb: { xs: 4, md: 0 },
+          textAlign: { xs: "center", md: "left" },
+        }}
+      >
+        <Typography
+          fontSize={{ xs: "1.3em", md: "1.8em" }}
+          fontWeight={500}
+          mb={3}
+        >
           Flat ₹10/Order. Always.
         </Typography>
         <Typography
           sx={{
-            fontSize: "3.4rem",
+            fontSize: { xs: "2rem", md: "3.4rem" },
             fontWeight: 550,
             color: "#5633CD",
             mb: 2,
@@ -37,16 +51,24 @@ const PricingOne = () => {
       </Box>
 
       {/* Right Section */}
-      <Box sx={{ flex: 1, minWidth: 300, textAlign: "center" }}>
+      <Box
+        sx={{
+          flex: 1,
+          minWidth: 220,
+          textAlign: "center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <Box
           component="img"
           src={PricingOneImg}
           alt="Pricing Illustration"
           sx={{
-            maxWidth: 480, // adjust this value as needed (e.g., 180, 200, etc.)
+            maxWidth: { xs: 280, md: 480 },
             width: "100%",
             height: "auto",
-            mx: "auto", // centers the image horizontally
           }}
         />
       </Box>

@@ -18,7 +18,7 @@ const HomeOne = () => {
             variant="h4"
             fontWeight={700}
             mb={1}
-            sx={{ fontSize: { xs: "1.8rem", md: "2rem" } }}
+            sx={{ fontSize: { xs: "1.8rem", md: "2rem" }, maxWidth: "33rem" }}
           >
             <span style={{ color: "#5633CD" }}> PennyPal </span> - Your Gateway
             to Smart, Simple and Affordable Investing
@@ -32,7 +32,6 @@ const HomeOne = () => {
             sx={{
               fontSize: "1.2rem",
               // fontWeight: 500,
-              lineHeight: 1.5,
               mb: 3,
             }}
           >
@@ -92,7 +91,7 @@ const HomeOne = () => {
 
               // left: 18, // adjust as needed for shadow offset
               width: "90%",
-              height: { xs: "80%", md: "75%" },
+              height: { xs: "80%", md: "70%" },
               bgcolor: "#5633CD",
               borderRadius: 5,
               // filter: "blur(2px)",
@@ -106,7 +105,7 @@ const HomeOne = () => {
             sx={{
               borderRadius: 5,
               p: 4,
-              width: 380,
+
               position: "relative",
               bgcolor: "#F1EDFF",
               textAlign: "center",
@@ -189,6 +188,8 @@ const HomeOne = () => {
 
                 mb: 2,
               }}
+              target="_blank"
+              href="https://ekyc.pennypal.in/lkpsec/individual_pennypal"
             >
               Open Free Account
             </Button>

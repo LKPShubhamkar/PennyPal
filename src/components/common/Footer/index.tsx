@@ -38,15 +38,18 @@ const footerLinks = [
     url: "https://evoting.cdslindia.com/Evoting/EvotingLogin",
   },
   { label: "Smart ODR", url: "https://smartodr.in/login" },
-  { label: "Account Closure", url: "https://ekyc.lkponline.com/lkp/closure" },
+  {
+    label: "Account Closure",
+    url: "https://closure.meon.co.in/cloud_closure/closure/lkpsec",
+  },
   { label: "KMP", url: "https://www.lkpsec.com/Kmp" },
   {
     label: "SEBI Complaint Redressal System",
-    url: "https://scores.gov.in/scores/Welcome.html",
+    url: "https://scores.sebi.gov.in/",
   },
   {
     label: "Customer Support",
-    url: "https://helpdesk.pennypal.in/portal/en/kb/pennypal",
+    url: "https://helpdesk.pennypal.in/portal/en/kb/",
   },
 ];
 
@@ -72,18 +75,30 @@ const Footer = () => {
               Download the App
             </Typography>
             <Stack direction="row" spacing={2} mt={2}>
-              <Box
-                component="img"
-                src={AppStore}
-                alt="App Store"
-                sx={{ height: 40 }}
-              />
-              <Box
-                component="img"
-                src={PlayStore}
-                alt="Google Play"
-                sx={{ height: 40 }}
-              />
+              <a
+                href="https://apps.apple.com/in/app/lkp-pennypal/id6740027396"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Box
+                  component="img"
+                  src={AppStore}
+                  alt="App Store"
+                  sx={{ height: 40 }}
+                />
+              </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.lkpsec.pennypal&hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Box
+                  component="img"
+                  src={PlayStore}
+                  alt="Google Play"
+                  sx={{ height: 40 }}
+                />
+              </a>
             </Stack>
           </Box>
           <Box>

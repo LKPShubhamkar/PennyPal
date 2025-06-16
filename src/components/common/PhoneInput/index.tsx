@@ -13,12 +13,25 @@ const PhoneInput = () => {
           alignItems: "center",
           justifyContent: "space-between",
           maxWidth: { xs: "100%", md: "50%" },
+          minWidth: 220,
+          border: "1.5px solid #5633CD",
+          borderRadius: "22px",
+          px: 2,
+          py: 0.5,
+          bgcolor: "#faf8ff",
+          gap: 1.5, // adds space between text and button
+          // mx: "auto", // centers on page if parent allows
         }}
       >
         <Typography
           variant="h6"
           sx={{
             fontWeight: 500,
+            color: "#5633CD",
+            fontSize: { xs: "1rem", sm: "1.1rem" },
+            flex: 1,
+            textAlign: "left",
+            pl: 1,
           }}
         >
           Open Free Account
@@ -31,18 +44,18 @@ const PhoneInput = () => {
           sx={{
             bgcolor: "#5633CD",
             color: "#fff",
-            borderRadius: "0 22px 22px 0",
+            borderRadius: "50%",
             height: 35,
-            px: 3,
-
+            width: 40,
             minWidth: "auto",
             transition: "background-color 0.3s ease",
+            ml: 1,
             "&:hover": {
               bgcolor: "#4b2dbf",
             },
             "& svg": {
               transition: "transform 0.3s ease",
-              transform: hovered ? "translateX(18px)" : "translateX(0)",
+              transform: hovered ? "translateX(8px)" : "translateX(0)",
             },
           }}
         >

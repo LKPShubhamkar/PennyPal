@@ -2,6 +2,8 @@ import { Box, Typography, Stack, Paper } from "@mui/material";
 import AppStore from "../../../assets/appstore.png";
 import PlayStore from "../../../assets/playstore.png";
 import PlatformTwoImg from "../../../assets/PlatformTwo.png";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 
 const featuresLeft = [
   "Quick paperless account opening",
@@ -19,6 +21,9 @@ const featuresRight = [
 ];
 
 const PlatformTwo = () => {
+  // Inside your component
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box
       sx={{
@@ -54,10 +59,15 @@ const PlatformTwo = () => {
 
         <Stack
           direction={{ xs: "column", sm: "row" }}
-          spacing={4}
+          spacing={isMobile ? 0 : 4} // 0 spacing on mobile, 4 on desktop
           flexWrap="nowrap"
         >
-          <Stack spacing={2}>
+          <Stack
+            spacing={2}
+            sx={{
+              mb: { xs: 2, sm: 0 }, // Add margin only when stacked
+            }}
+          >
             {featuresLeft.map((text, idx) => (
               <Paper
                 key={idx}
@@ -102,18 +112,30 @@ const PlatformTwo = () => {
 
         {/* Store Buttons */}
         <Stack direction="row" spacing={2} mt={4}>
-          <Box
-            component="img"
-            src={AppStore}
-            alt="App Store"
-            sx={{ height: 48 }}
-          />
-          <Box
-            component="img"
-            src={PlayStore}
-            alt="Google Play"
-            sx={{ height: 48 }}
-          />
+          <a
+            href="https://apps.apple.com/in/app/lkp-pennypal/id6740027396"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Box
+              component="img"
+              src={AppStore}
+              alt="App Store"
+              sx={{ height: 40 }}
+            />
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.lkpsec.pennypal&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Box
+              component="img"
+              src={PlayStore}
+              alt="Google Play"
+              sx={{ height: 40 }}
+            />
+          </a>
         </Stack>
       </Box>
 
