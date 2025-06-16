@@ -180,12 +180,12 @@ const HomeOne = () => {
               sx={{
                 border: "1px solid #5633CD",
                 color: "#5633CD",
+                backgroundColor: "White",
                 borderRadius: "30px",
                 width: "100%",
                 fontSize: "1rem",
                 height: 44,
                 boxShadow: "0px 0px 5px #c792e6",
-
                 mb: 2,
               }}
               target="_blank"

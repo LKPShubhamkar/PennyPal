@@ -29,7 +29,11 @@ const HomeSix = () => {
 
           <Typography variant="h6" mb={3}>
             Flat{" "}
-            <Box component="span" sx={{ color: "#5633CD", fontWeight: 700 }}>
+            <Box
+              component="span"
+              sx={{ color: "#5633CD", fontWeight: 700, fontSize: "2rem" }}
+            >
+              {" "}
               ₹10
             </Box>
             /order. Invest Smart. Grow Steady.

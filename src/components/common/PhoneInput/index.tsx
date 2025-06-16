@@ -6,63 +6,68 @@ const PhoneInput = () => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <>
-      <Box
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        maxWidth: { xs: "100%", md: "50%" },
+        minWidth: 320,
+        border: "1.5px solid rgb(88, 63, 172)",
+        borderRadius: "22px",
+        px: 2,
+        py: 0.5,
+        bgcolor: "#faf8ff",
+        gap: 1.5,
+        // Uncomment below to center in parent:
+        // mx: "auto",
+      }}
+    >
+      <Typography
+        variant="h6"
         sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          maxWidth: { xs: "100%", md: "50%" },
-          minWidth: 220,
-          border: "1.5px solid #5633CD",
-          borderRadius: "22px",
-          px: 2,
-          py: 0.5,
-          bgcolor: "#faf8ff",
-          gap: 1.5, // adds space between text and button
-          // mx: "auto", // centers on page if parent allows
+          fontWeight: 500,
+          color: "#5633CD",
+          fontSize: { xs: "1rem", sm: "1.1rem" },
+          flex: 1,
+          textAlign: "left",
         }}
       >
-        <Typography
-          variant="h6"
-          sx={{
-            fontWeight: 500,
-            color: "#5633CD",
-            fontSize: { xs: "1rem", sm: "1.1rem" },
-            flex: 1,
-            textAlign: "left",
-            pl: 1,
-          }}
-        >
-          Open Free Account
-        </Typography>
-        <IconButton
-          href="https://ekyc.pennypal.in/lkpsec/individual_pennypal"
-          target="_blank"
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          sx={{
-            bgcolor: "#5633CD",
-            color: "#fff",
-            borderRadius: "50%",
-            height: 35,
-            width: 40,
-            minWidth: "auto",
-            transition: "background-color 0.3s ease",
-            ml: 1,
-            "&:hover": {
-              bgcolor: "#4b2dbf",
-            },
-            "& svg": {
-              transition: "transform 0.3s ease",
-              transform: hovered ? "translateX(8px)" : "translateX(0)",
-            },
-          }}
-        >
-          <ArrowForwardIcon />
-        </IconButton>
-      </Box>
-    </>
+        Open Free Account
+      </Typography>
+      <IconButton
+        href="https://ekyc.pennypal.in/lkpsec/individual_pennypal"
+        target="_blank"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        sx={{
+          bgcolor: "#5633CD",
+          color: "#fff",
+          borderRadius: "30px",
+          width: 80,
+          height: 35,
+          border: "0.5px solid #5633CD",
+          minWidth: 0,
+          flexShrink: 0,
+          transition: "background-color 0.3s ease",
+          boxSizing: "border-box",
+          "&:hover": {
+            bgcolor: "#4b2dbf",
+          },
+          "& svg": {
+            transition: "transform 0.3s ease",
+            transform: hovered ? "translateX(18px)" : "translateX(0)",
+            fontSize: 28,
+          },
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          p: 0,
+        }}
+      >
+        <ArrowForwardIcon />
+      </IconButton>
+    </Box>
   );
 };
 

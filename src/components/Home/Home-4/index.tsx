@@ -1,5 +1,6 @@
 import { Box, Stack, Typography, Paper } from "@mui/material";
 import HomeFourImage from "../../../../src/assets/HomeFour.png"; // Adjust path if needed
+// import Card from "../../common/Card";
 
 const featureList = [
   "Trading View Chart Integration",
@@ -60,6 +61,7 @@ const HomeFour = () => {
             useFlexGap
             gap={2}
           >
+            {/* <Card /> */}
             {featureList.map((feature, idx) => (
               <Paper
                 key={idx}

@@ -11,7 +11,6 @@ const PricingOne = () => {
         alignItems: "center",
         bgcolor: "#fff",
         minHeight: "80vh",
-        px: { xs: 2, md: 6 },
         py: { xs: 4, md: 0 },
       }}
     >
