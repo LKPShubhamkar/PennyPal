@@ -15,7 +15,7 @@ const PhoneInput = () => {
         minWidth: 320,
         border: "1.5px solid rgb(88, 63, 172)",
         borderRadius: "22px",
-        px: 2,
+        px: 0.5,
         py: 0.5,
         bgcolor: "#faf8ff",
         gap: 1.5,
@@ -31,6 +31,7 @@ const PhoneInput = () => {
           fontSize: { xs: "1rem", sm: "1.1rem" },
           flex: 1,
           textAlign: "left",
+          px: 1.5,
         }}
       >
         Open Free Account
@@ -62,7 +63,6 @@ const PhoneInput = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          p: 0,
         }}
       >
         <ArrowForwardIcon />

@@ -4,13 +4,13 @@ import {
   Toolbar,
   Button,
   Box,
-  Container,
   IconButton,
   Menu,
   MenuItem,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link, useLocation } from "react-router-dom";
+import CustomContainer from "../CustomContainer";
 
 const navLinks = [
   { label: "About Us", path: "/about-us" },
@@ -34,11 +34,12 @@ const Header = () => {
       elevation={1}
       sx={{
         bgcolor: "#fff",
-        borderBottom: "1px solid #eee",
+        // borderBottom: "1px solid #eee",
+        boxShadow: " 0px 4px 6.5px 0px #5633CD2B",
         justifyContent: "center",
       }}
     >
-      <Container maxWidth="lg">
+      <CustomContainer>
         <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
           {/* Logo Section */}
           <Box display="flex" alignItems="center">
@@ -162,7 +163,7 @@ const Header = () => {
             </Button>
           </Box>
         </Toolbar>
-      </Container>
+      </CustomContainer>
     </AppBar>
   );
 };

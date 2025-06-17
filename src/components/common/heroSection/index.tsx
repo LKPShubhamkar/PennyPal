@@ -1,6 +1,7 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Banner from "../../../assets/about_banner.png";
 import PhoneInput from "../PhoneInput";
+import CustomContainer from "../CustomContainer";
 const TopArm = () => {
   return (
     <Box
@@ -10,7 +11,7 @@ const TopArm = () => {
         fontFamily: "'Lato', sans-serif",
       }}
     >
-      <Container maxWidth="lg">
+      <CustomContainer>
         <Box
           sx={{
             display: "flex",
@@ -80,7 +81,7 @@ const TopArm = () => {
             }}
           />
         </Box>
-      </Container>
+      </CustomContainer>
     </Box>
   );
 };

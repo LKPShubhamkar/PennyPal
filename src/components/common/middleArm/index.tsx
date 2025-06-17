@@ -1,7 +1,8 @@
-import { Box, Container, Typography, Divider } from "@mui/material";
+import { Box, Typography, Divider } from "@mui/material";
 import Img1 from "../../../assets/coins.png";
 import Img2 from "../../../assets/stock_chart.png";
 import Img3 from "../../../assets/Clip_path.png";
+import CustomContainer from "../CustomContainer";
 
 const WhatWeStandFor = () => {
   const items = [
@@ -29,7 +30,7 @@ const WhatWeStandFor = () => {
         bgcolor: "#fff",
       }}
     >
-      <Container maxWidth="lg">
+      <CustomContainer>
         {/* Main Heading */}
         <Typography
           variant="h4"
@@ -120,7 +121,7 @@ const WhatWeStandFor = () => {
             </Box>
           ))}
         </Box>
-      </Container>
+      </CustomContainer>
     </Box>
   );
 };

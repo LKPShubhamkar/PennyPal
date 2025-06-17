@@ -1,13 +1,13 @@
-import { Container } from "@mui/material";
 import PricingOne from "../../components/Pricing/Pricing-1";
 import Pricingtwo from "../../components/Pricing/pricing-2";
+import CustomContainer from "../../components/common/CustomContainer";
 
 const Pricing = () => {
   return (
-    <Container maxWidth="lg">
+    <CustomContainer>
       <PricingOne />
       <Pricingtwo />
-    </Container>
+    </CustomContainer>
   );
 };
 
