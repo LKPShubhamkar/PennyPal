@@ -60,7 +60,7 @@ const HomeThree = () => {
             </Box>
 
             {/* Right Section - Content */}
-            <Box sx={{ flex: 1 }}>
+            <Box sx={{ flex: 1, pl: { md: 8 } }}>
               <Typography
                 fontWeight={700}
                 color="#5633CD"

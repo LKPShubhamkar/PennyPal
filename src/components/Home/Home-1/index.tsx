@@ -79,7 +79,7 @@ const HomeOne = () => {
 
           <Box
             sx={{
-              width: { xs: "20rem", md: "25rem" },
+              width: { xs: "20rem", md: "28rem" },
               height: "25rem",
               display: "flex",
               alignItems: "center",
@@ -94,10 +94,9 @@ const HomeOne = () => {
             <Box
               sx={{
                 position: "absolute",
-
                 // left: 18, // adjust as needed for shadow offset
                 width: "90%",
-                height: { xs: "80%", md: "70%" },
+                height: { xs: "80%", md: "65%" },
                 bgcolor: "#5633CD",
                 borderRadius: 5,
                 // filter: "blur(2px)",

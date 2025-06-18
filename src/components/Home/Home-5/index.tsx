@@ -13,7 +13,7 @@ const points = [
 const HomeFive = () => {
   return (
     <CustomContainer>
-      <Box>
+      <Box sx={{ mt: 8 }}>
         <Stack spacing={2} alignItems="center" textAlign="center">
           <Typography
             variant="h4"

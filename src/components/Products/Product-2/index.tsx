@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Box, Button, Typography, Stack, Paper } from "@mui/material";
+import CustomContainer from "../../common/CustomContainer";
 
 const featureContent = {
   "Equity Trading": {
@@ -63,66 +64,68 @@ const ProductTwo = () => {
   const { subtitle, features } = featureContent[activeTab];
 
   return (
-    <Box sx={{ minHeight: "50vh" }}>
-      {/* Tabs */}
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        flexWrap="wrap"
-        gap={2}
-        mb={7}
-      >
-        {tabOptions.map((tab) => (
-          <Button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            sx={{
-              color: "#5633CD",
-              borderBottom: activeTab === tab ? "2px solid #5633CD" : "none",
-              borderRadius: 0,
-              fontWeight: 600,
-              textTransform: "none",
-              fontSize: "1rem",
-            }}
-          >
-            {tab}
-          </Button>
-        ))}
-      </Stack>
+    <CustomContainer>
+      <Box sx={{ minHeight: "50vh" }}>
+        {/* Tabs */}
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          flexWrap="wrap"
+          gap={2}
+          mb={7}
+        >
+          {tabOptions.map((tab) => (
+            <Button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              sx={{
+                color: "#5633CD",
+                borderBottom: activeTab === tab ? "2px solid #5633CD" : "none",
+                borderRadius: 0,
+                fontWeight: 600,
+                textTransform: "none",
+                fontSize: "1rem",
+              }}
+            >
+              {tab}
+            </Button>
+          ))}
+        </Stack>
 
-      {/* Subtitle */}
-      <Typography
-        variant="h5"
-        align="center"
-        fontWeight={600}
-        color="#5633CD"
-        mb={6}
-      >
-        {subtitle}
-      </Typography>
+        {/* Subtitle */}
+        <Typography
+          variant="h5"
+          align="center"
+          fontWeight={600}
+          color="#5633CD"
+          mb={6}
+        >
+          {subtitle}
+        </Typography>
 
-      {/* Features */}
-      <Stack direction="row" justifyContent="center" gap={4} flexWrap="wrap">
-        {features.map((text, index) => (
-          <Paper
-            key={index}
-            elevation={3}
-            sx={{
-              px: 4,
-              py: 3,
-              borderRadius: 4,
-              textAlign: "center",
-              color: "#5633CD",
-              fontWeight: 500,
-              minWidth: 220,
-              whiteSpace: "pre-line",
-            }}
-          >
-            {text}
-          </Paper>
-        ))}
-      </Stack>
-    </Box>
+        {/* Features */}
+        <Stack direction="row" justifyContent="center" gap={4} flexWrap="wrap">
+          {features.map((text, index) => (
+            <Paper
+              key={index}
+              elevation={3}
+              sx={{
+                px: 4,
+                py: 3,
+                borderRadius: 4,
+                textAlign: "center",
+                color: "#5633CD",
+                fontWeight: 500,
+                minWidth: 220,
+                whiteSpace: "pre-line",
+              }}
+            >
+              {text}
+            </Paper>
+          ))}
+        </Stack>
+      </Box>
+    </CustomContainer>
   );
 };
 

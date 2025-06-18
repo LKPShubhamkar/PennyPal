@@ -1,14 +1,17 @@
 import { Box, Typography } from "@mui/material";
 import Banner from "../../../assets/about_banner.png";
+import HomeFrame from "../../../assets/aboutus1frame.png";
 import PhoneInput from "../PhoneInput";
 import CustomContainer from "../CustomContainer";
 const TopArm = () => {
   return (
     <Box
       sx={{
-        py: 8,
-        bgcolor: "#f9f9f9",
-        fontFamily: "'Lato', sans-serif",
+        backgroundImage: `url(${HomeFrame})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "100%",
+        py: 10,
       }}
     >
       <CustomContainer>
