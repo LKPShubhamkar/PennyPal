@@ -13,8 +13,8 @@ const ProductOne = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",
-        py: 10,
-        minHeight: "90vh",
+        // py: 10,
+        // minHeight: "40vh",
       }}
     >
       {" "}
@@ -26,19 +26,20 @@ const ProductOne = () => {
             alignItems: "center",
             justifyContent: "space-between",
             gap: 6,
+            minHeight: "90vh",
           }}
         >
           {/* Left Section */}
           <Box sx={{ flex: 1 }}>
             <Typography
-              variant="h4"
+              variant="h2"
               fontWeight={700}
               sx={{ color: "#5633CD", mb: 2 }}
             >
               Your Complete Investing Toolkit
             </Typography>
 
-            <Typography variant="h6" fontWeight={500} mb={2}>
+            <Typography variant="h4" fontWeight={500} mb={2}>
               Everything You Need. All in One Place.
             </Typography>
 
@@ -55,7 +56,7 @@ const ProductOne = () => {
             <img
               src={ProductOneImg}
               alt="Investing Toolkit"
-              style={{ width: "100%", maxWidth: 500 }}
+              style={{ width: "100%" }}
             />
           </Box>
         </Box>

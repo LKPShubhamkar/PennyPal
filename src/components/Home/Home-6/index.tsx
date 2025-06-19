@@ -2,14 +2,25 @@ import { Box, Typography } from "@mui/material";
 import HomeSixImg from "../../../assets/HomeSix.png";
 import AppStore from "../../../assets/appstore.png";
 import PlayStore from "../../../assets/playstore.png";
-import bargraph from "../../../assets/bargraph.png";
+import HomeFrame from "../../../assets/Home6Frame.png";
 import PhoneInput from "../../common/PhoneInput";
 import CustomContainer from "../../common/CustomContainer";
 
 const HomeSix = () => {
   return (
-    <CustomContainer>
-      <Box sx={{ bgcolor: "#fff", py: { xs: 8, md: 12 } }}>
+    <Box
+      sx={{
+        backgroundImage: `url(${HomeFrame})`,
+        backgroundSize: "contain", // ✅ fixed key
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        width: "100%",
+        pb: 10,
+        pt: "140px",
+      }}
+    >
+      <CustomContainer>
+        {/* <Box sx={{ py: { xs: 8, md: 2 } }}> */}
         <Box
           sx={{
             display: "flex",
@@ -44,7 +55,10 @@ const HomeSix = () => {
             <Typography
               variant="h6"
               mb={3}
-              sx={{ fontSize: { xs: "1.2rem", md: "1.4rem" }, fontWeight: 500 }}
+              sx={{
+                fontSize: { xs: "1.2rem", md: "1.4rem" },
+                fontWeight: 500,
+              }}
             >
               Flat{" "}
               <Box
@@ -79,22 +93,6 @@ const HomeSix = () => {
                 <img src={PlayStore} alt="Get it on Google Play" width={140} />
               </a>
             </Box>
-            <Box
-              sx={{
-                flex: 1,
-                textAlign: "center",
-              }}
-            >
-              <img
-                src={bargraph}
-                alt="Start Investing Illustration"
-                style={{
-                  width: "100%",
-                  // maxWidth: 480,
-                  height: "auto",
-                }}
-              />
-            </Box>
           </Box>
 
           {/* Right Image */}
@@ -115,8 +113,9 @@ const HomeSix = () => {
             />
           </Box>
         </Box>
-      </Box>
-    </CustomContainer>
+        {/* </Box> */}
+      </CustomContainer>
+    </Box>
   );
 };
 

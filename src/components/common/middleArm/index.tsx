@@ -2,6 +2,7 @@ import { Box, Typography, Divider } from "@mui/material";
 import Img1 from "../../../assets/coins.png";
 import Img2 from "../../../assets/stock_chart.png";
 import Img3 from "../../../assets/Clip_path.png";
+import aboutframe from "../../../assets/About2frame.png";
 import CustomContainer from "../CustomContainer";
 
 const WhatWeStandFor = () => {
@@ -14,20 +15,30 @@ const WhatWeStandFor = () => {
     {
       img: Img2,
       title: "Transparent Pricing",
-      subtitle: "No hidden charges, simple ₹10 per order pricing",
+      subtitle: "₹10/order across Equity, F&O, Currency and Commodities",
     },
     {
       img: Img3,
       title: "Trusted Legacy",
-      subtitle: "Backed by LKP Securities since 1948",
+      subtitle: "Democratizing trading for retail investors across India",
     },
   ];
 
   return (
+    // <Box
+    //   sx={{
+    //     py: 8,
+    //     bgcolor: "#fff",
+    //     border: " 1px solid #5633CD36",
+    //   }}
+    // >
     <Box
       sx={{
-        py: 8,
-        bgcolor: "#fff",
+        backgroundImage: `url(${aboutframe})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "100%",
+        py: 10,
       }}
     >
       <CustomContainer>
@@ -50,73 +61,76 @@ const WhatWeStandFor = () => {
         <Box
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", md: "row" }, // vertical on mobile, horizontal on desktop
+            flexDirection: { xs: "column", md: "row" },
             justifyContent: "space-between",
             alignItems: "stretch",
-            gap: 3, // space between boxes
+            gap: 3,
           }}
         >
           {items.map((item, index) => (
             <Box
               key={index}
               sx={{
-                flex: "0 0 31%", // force ~3 in a row
-                border: "1px solid #eee",
+                flex: "0 0 31%",
+                border: "1px solid #5633CD36",
                 borderRadius: "12px",
-                // p: 2,
+                backgroundColor: "white",
                 display: "flex",
                 alignItems: "center",
-                minHeight: "120px", // smaller box height
+                minHeight: "120px",
                 transition: "box-shadow 0.1s ease",
-                // cursor: "pointer",
                 "&:hover": {
-                  boxShadow: "0px 8px 16px #c792e6", // subtle hover effect
+                  boxShadow: "0px 8px 16px #c792e6",
                 },
               }}
             >
-              {/* Left - Image */}
-              <Box
-                component="img"
-                src={item.img}
-                alt={item.title}
-                sx={{
-                  width: 50,
-                  height: 50,
-                  objectFit: "contain",
-                  //   mr: 2,
-                  ml: 2,
-                }}
-              />
-
-              {/* Grey Vertical Line */}
-              <Divider
-                orientation="vertical"
-                flexItem
-                sx={{
-                  bgcolor: "#ccc",
-                  width: "1px",
-                  mx: 2,
-                }}
-              />
-
-              {/* Right - Text */}
-              <Box>
-                <Typography
-                  variant="h6"
+              {/* Horizontal layout inside each card */}
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                {/* Left - Image */}
+                <Box
+                  component="img"
+                  src={item.img}
+                  alt={item.title}
                   sx={{
-                    fontWeight: 600,
-                    mb: 0.5,
-                    fontSize: "1rem", // slightly smaller
+                    width: 50,
+                    height: 50,
+                    objectFit: "contain",
+                    ml: 2,
                   }}
-                >
-                  {item.title}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{ lineHeight: 1.5, fontSize: "0.9rem" }}
-                >
-                  {item.subtitle}
-                </Typography>
+                />
+
+                {/* Vertical Divider */}
+                <Divider
+                  orientation="vertical"
+                  flexItem
+                  sx={{
+                    bgcolor: "#ccc",
+                    width: "1px",
+                    mx: 2,
+                    alignSelf: "stretch",
+                  }}
+                />
+
+                {/* Right - Text */}
+                <Box>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontWeight: 600,
+                      mb: 0.5,
+                      fontSize: "1rem",
+                      color: "#5633CD",
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{ lineHeight: 1.5, fontSize: "0.9rem" }}
+                  >
+                    {item.subtitle}
+                  </Typography>
+                </Box>
               </Box>
             </Box>
           ))}

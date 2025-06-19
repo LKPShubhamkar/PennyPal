@@ -42,9 +42,10 @@ const PlatformThree = () => {
           sx={{
             flex: 1,
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "flex-start",
             alignItems: "center",
-            mt: { xs: 6, md: 0 },
+            position: "relative",
+            overflow: "visible",
           }}
         >
           <Box
@@ -52,25 +53,23 @@ const PlatformThree = () => {
             src={PlatformThreeImg}
             alt="Mobile App UI"
             sx={{
-              // width: { xs: "100%", md: "660px" },
-              maxWidth: "100%",
-              height: "auto",
+              width: { xs: "120%", md: "160%" },
+              maxWidth: "none",
+              transform: { xs: "translateX(-10%)", md: "translateX(-25%)" },
             }}
           />
-        </Box>{" "}
+        </Box>
         {/* Right Image */}
-        <Box sx={{ flex: 1 }}>
+        <Box sx={{ flex: 1, pl: { md: 12 } }}>
           <Typography
-            variant="h4"
             color="#5633CD"
             fontWeight={700}
             gutterBottom
-            sx={{ fontSize: { xs: "28px", md: "36px" } }}
+            sx={{ fontSize: { xs: "28px", md: "56px" } }}
           >
             PennyPal Web
           </Typography>
           <Typography
-            variant="h6"
             fontWeight={500}
             sx={{ fontSize: { xs: "18px", md: "22px" }, mb: 4 }}
           >
@@ -100,7 +99,9 @@ const PlatformThree = () => {
                     color: "#000",
                     fontWeight: 500,
                     fontSize: "15px",
-                    maxWidth: 320,
+                    minWidth: 320,
+                    background:
+                      "linear-gradient(90deg, rgba(86, 51, 205, 0.09) 0%, rgba(255, 255, 255, 0.09) 100%)",
                   }}
                 >
                   {text}
@@ -121,7 +122,9 @@ const PlatformThree = () => {
                     color: "#000",
                     fontWeight: 500,
                     fontSize: "15px",
-                    maxWidth: 320,
+                    minWidth: 320,
+                    background:
+                      "linear-gradient(90deg, rgba(86, 51, 205, 0.09) 0%, rgba(255, 255, 255, 0.09) 100%)",
                   }}
                 >
                   {text}

@@ -47,7 +47,7 @@ const PlatformTwo = () => {
             color="#5633CD"
             fontWeight={700}
             gutterBottom
-            sx={{ fontSize: { xs: "28px", md: "36px" } }}
+            sx={{ fontSize: { xs: "28px", md: "56px" } }}
           >
             PennyPal Mobile App
           </Typography>
@@ -82,7 +82,9 @@ const PlatformTwo = () => {
                     color: "#000",
                     fontWeight: 500,
                     fontSize: "15px",
-                    maxWidth: 320,
+                    minWidth: 250,
+                    background:
+                      "linear-gradient(90deg, rgba(86, 51, 205, 0.09) 0%, rgba(255, 255, 255, 0.09) 100%)",
                   }}
                 >
                   {text}
@@ -103,7 +105,9 @@ const PlatformTwo = () => {
                     color: "#000",
                     fontWeight: 500,
                     fontSize: "15px",
-                    maxWidth: 320,
+                    minWidth: 280,
+                    background:
+                      "linear-gradient(90deg, rgba(86, 51, 205, 0.09) 0%, rgba(255, 255, 255, 0.09) 100%)",
                   }}
                 >
                   {text}
@@ -157,8 +161,9 @@ const PlatformTwo = () => {
             alt="Mobile App UI"
             sx={{
               // width: { xs: "100%", md: "220px" },
-              maxWidth: "100%",
-              height: "auto",
+              maxWidth: "120%",
+              // height: "auto",
+              // minHeight: "630px",
             }}
           />
         </Box>

@@ -1,8 +1,10 @@
-import { Box, Grid, Paper, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import AppStore from "../../../assets/appstore.png";
 import PlayStore from "../../../assets/playstore.png";
 // import webBroswer from "../../../assets/webroswer.png";
 import CustomTable from "../../common/Table";
+import Card from "../../common/Card";
+import CustomContainer from "../../common/CustomContainer";
 
 const features = [
   "No Account Opening Fee",
@@ -14,14 +16,14 @@ const features = [
 
 const Pricingtwo = () => {
   return (
-    <Box>
+    <CustomContainer>
       <Typography
         variant="h4"
         sx={{
           color: "#5633CD",
           textAlign: "center",
           fontWeight: 700,
-          mb: 4,
+          my: 4,
           fontSize: { xs: "1.5rem", md: "2rem" },
         }}
       >
@@ -35,29 +37,31 @@ const Pricingtwo = () => {
       <Stack
         direction={{ xs: "column", sm: "row" }}
         spacing={2}
+        justifyContent={"space-between"}
         sx={{
           pt: "2rem",
           alignItems: "stretch",
         }}
       >
         {features.map((feature, idx) => (
-          <Paper
-            key={idx}
-            elevation={1}
-            sx={{
-              p: 2,
-              textAlign: "center",
-              fontWeight: 600,
-              color: "#5633CD",
-              bgcolor: "#f9f8ff",
-              borderRadius: 2,
-              fontSize: { xs: "1rem", md: "1.1rem" },
-              flex: 1,
-              minWidth: 0,
-            }}
-          >
-            {feature}
-          </Paper>
+          // <Paper
+          //   key={idx}
+          //   elevation={1}
+          //   sx={{
+          //     p: 2,
+          //     textAlign: "center",
+          //     fontWeight: 600,
+          //     color: "#5633CD",
+          //     bgcolor: "#f9f8ff",
+          //     borderRadius: 2,
+          //     fontSize: { xs: "1rem", md: "1.1rem" },
+          //     flex: 1,
+          //     minWidth: 0,
+          //   }}
+          // >
+          <Card key={idx} title={feature} width={220} height={110} />
+
+          // </Paper>
         ))}
       </Stack>
 
@@ -131,7 +135,7 @@ const Pricingtwo = () => {
           </Grid>
         </Grid>
       </Box>
-    </Box>
+    </CustomContainer>
   );
 };
 

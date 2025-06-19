@@ -1,12 +1,17 @@
 import { Box, Typography } from "@mui/material";
 import LkpLogo from "../../../assets/LKPLogo.png";
 import CustomContainer from "../CustomContainer";
+import vectorImage from "../../../assets/vector.png";
 
 const Promos = () => {
   return (
     <Box
       sx={{
-        background: "linear-gradient(90deg, #5633CD 0%, #2B1A67 100%)",
+        backgroundImage: `url(${vectorImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "100%",
+        py: 10,
       }}
     >
       <CustomContainer>

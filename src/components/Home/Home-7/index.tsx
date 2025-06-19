@@ -37,10 +37,11 @@ const HomeSeven = () => {
     <Box
       sx={{
         background: "linear-gradient(180deg, #FFFFFF 0%, #FAF9FF 100%)",
+        borderBottom: "1px solid #5633CD52",
       }}
     >
       <CustomContainer>
-        <Box sx={{ py: { xs: 4, md: 8 } }}>
+        <Box>
           <Stack
             direction={{ xs: "column", md: "row" }}
             alignItems="center"

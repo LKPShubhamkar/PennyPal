@@ -1,8 +1,8 @@
-import { Box, Stack, Typography, Paper } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import HomeFourImage from "../../../../src/assets/HomeFour.png"; // Adjust path if needed
 import HomeFrame from "../../../../src/assets/Home4Frame.png";
 import CustomContainer from "../../common/CustomContainer";
-// import Card from "../../common/Card";
+import Card from "../../common/Card";
 
 const featureList = [
   "Trading View Chart Integration",
@@ -40,7 +40,7 @@ const HomeFour = () => {
               alt="Trader Tools"
               sx={{
                 width: { xs: "100%", md: "48%" },
-                maxWidth: 500,
+                maxWidth: 600,
                 display: "block",
                 mx: { xs: "auto", md: 0 },
               }}
@@ -66,36 +66,23 @@ const HomeFour = () => {
                 Investor-Friendly Experience.
               </Typography>
 
-              <Stack
-                direction="row"
-                flexWrap="wrap"
-                justifyContent={{ xs: "center", md: "flex-start" }}
-                useFlexGap
-                gap={2}
+              <Box
+                sx={{
+                  display: "grid",
+                  gridTemplateColumns: {
+                    xs: "1fr",
+                    sm: "1fr 1fr",
+                    md: "1fr 1fr 1fr",
+                  },
+                  gap: 2,
+                }}
               >
-                {/* <Card /> */}
                 {featureList.map((feature, idx) => (
-                  <Paper
-                    key={idx}
-                    elevation={0}
-                    sx={{
-                      border: "1px solid #E0E0E0",
-                      borderRadius: "12px",
-
-                      px: 3,
-                      py: 1.5,
-                      minWidth: 120,
-                      textAlign: "center",
-                      color: "#5633CD",
-                      fontWeight: 500,
-                      fontSize: "14px",
-                      backgroundColor: "#fff",
-                    }}
-                  >
-                    {feature}
-                  </Paper>
+                  <Box key={idx}>
+                    <Card title={feature} width={170} height={85} />
+                  </Box>
                 ))}
-              </Stack>
+              </Box>
             </Stack>
           </Stack>
         </Box>

@@ -41,7 +41,7 @@ const HomeThree = () => {
       }}
     >
       <CustomContainer>
-        <Box sx={{ pt: 8 }}>
+        <Box>
           <Box
             sx={{
               display: "flex",

@@ -79,7 +79,7 @@ const TopArm = () => {
             sx={{
               flex: 1,
               width: "100%",
-              maxHeight: 400,
+              maxHeight: 550,
               objectFit: "contain",
             }}
           />

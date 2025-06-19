@@ -33,7 +33,7 @@ const HomeTwo = () => {
 
   return (
     <CustomContainer>
-      <Box sx={{ pt: 8 }}>
+      <Box>
         <Box
           sx={{
             display: "flex",
@@ -114,10 +114,11 @@ const HomeTwo = () => {
 
           {/* Right Section - Image */}
           <Box sx={{ flex: 1, textAlign: "center" }}>
-            <img
+            <Box
+              component="img"
               src={HomeTwoImg}
               alt="PennyPal Mobile App"
-              style={{ width: "60%", maxWidth: 400 }}
+              sx={{ width: "100%", minWidth: { md: 650 } }}
             />
           </Box>
         </Box>

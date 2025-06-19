@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import PhoneInput from "../../common/PhoneInput";
 import PlatformOneImg from "../../../assets/platformOne.png";
+import platformframe from "../../../assets/Platform1frame.png";
+import CustomContainer from "../../common/CustomContainer";
 
 const words = ["Powerful.", "Simple.", "Seamless."];
 
@@ -22,75 +24,97 @@ const ProductThree = () => {
   return (
     <Box
       sx={{
-        display: "flex",
-        alignItems: "center",
-        flexWrap: "wrap",
-        bgcolor: "#fff",
-        minHeight: "80vh",
+        backgroundImage: `url(${platformframe})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "100%",
+        // maxHeight: "80vh",
+        py: 10,
       }}
     >
-      {/* Left Section */}
-      <Box sx={{ flex: 1, minWidth: 300, pr: { md: 6 }, mb: { xs: 4, md: 0 } }}>
-        {/* Vertical Carousel Text */}
+      <CustomContainer>
         <Box
           sx={{
-            height: `${wordHeight}px`,
-            overflow: "hidden",
-            position: "relative",
-            mb: 2,
+            display: "flex",
+            alignItems: "center",
+            flexWrap: "wrap",
+            minHeight: "60vh",
+            // bgcolor: "#fff",
+            // minHeight: "80vh",
           }}
         >
+          {/* Left Section */}
           <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              transition: "transform 0.6s ease-in-out",
-              transform: `translateY(-${index * wordHeight}px)`,
-              height: `${words.length * wordHeight}px`,
-            }}
+            sx={{ flex: 1, minWidth: 300, pr: { md: 6 }, mb: { xs: 4, md: 0 } }}
           >
-            {words.map((word, i) => (
-              <Typography
-                key={i}
+            {/* Vertical Carousel Text */}
+            <Box
+              sx={{
+                height: `${wordHeight}px`,
+                overflow: "hidden",
+                position: "relative",
+                mb: 2,
+              }}
+            >
+              <Box
                 sx={{
-                  fontSize: { xs: "4.5rem", md: "6rem" },
-
-                  color: "transparent",
-                  WebkitTextStroke: "1px #5633CD",
-                  height: `${wordHeight}px`,
-                  lineHeight: `${wordHeight}px`,
+                  display: "flex",
+                  flexDirection: "column",
+                  transition: "transform 0.6s ease-in-out",
+                  transform: `translateY(-${index * wordHeight}px)`,
+                  height: `${words.length * wordHeight}px`,
                 }}
               >
-                {word}
-              </Typography>
-            ))}
+                {words.map((word, i) => (
+                  <Typography
+                    key={i}
+                    sx={{
+                      fontSize: { xs: "4.5rem", md: "6.5rem" },
+                      color: "transparent",
+                      WebkitTextStroke: "1px #5633CD",
+                      height: `${wordHeight}px`,
+                      lineHeight: `${wordHeight}px`,
+                      textShadow: "0px 2px 15px rgba(86, 51, 205, 0.3)",
+                    }}
+                  >
+                    {word}
+                  </Typography>
+                ))}
+              </Box>
+            </Box>
+
+            {/* Subheading */}
+            <Typography color="#5633CD" fontSize="3rem" fontWeight={600} mb={1}>
+              Next-Gen Trading.
+              <br />
+              Built for India.
+            </Typography>
+
+            {/* Description */}
+            <Typography fontSize="1rem" mb={3}>
+              Trade anywhere, anytime with PennyPal’s mobile and web platforms.
+              Fast, secure, and equipped with useful features.
+            </Typography>
+
+            <PhoneInput />
           </Box>
+
+          {/* Right Section */}
+          <Box
+            component="img"
+            src={PlatformOneImg}
+            alt="Trading Illustration"
+            sx={{
+              width: { xs: "100%", sm: "80%", md: "100%" },
+              maxWidth: 700,
+              height: "auto",
+              objectFit: "contain",
+              mx: "auto",
+              display: "block",
+            }}
+          />
         </Box>
-
-        {/* Subheading */}
-        <Typography color="#5633CD" fontSize="2rem" fontWeight={600} mb={1}>
-          Next-Gen Trading.
-          <br />
-          Built for India.
-        </Typography>
-
-        {/* Description */}
-        <Typography fontSize="1rem" mb={3}>
-          Trade anywhere, anytime with PennyPal’s mobile and web platforms.
-          Fast, secure, and equipped with useful features.
-        </Typography>
-
-        <PhoneInput />
-      </Box>
-
-      {/* Right Section */}
-      <Box sx={{ flex: 1, minWidth: 300, textAlign: "center" }}>
-        <img
-          src={PlatformOneImg}
-          alt="Trading Illustration"
-          style={{ maxWidth: "100%", height: "auto" }}
-        />
-      </Box>
+      </CustomContainer>
     </Box>
   );
 };

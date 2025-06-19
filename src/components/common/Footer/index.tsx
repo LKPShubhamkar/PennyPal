@@ -229,14 +229,13 @@ const Footer = () => {
           </Typography>
         </Box>
         <Box flex={1}>
-          <Typography
+          {/* <Typography
             fontWeight={600}
             mb={1}
             color="#5633CD"
             fontSize={{ xs: 18, sm: 20 }}
-          >
-            Corporate Office :
-          </Typography>
+          > */}
+          Corporate Office :{/* </Typography> */}
           <Typography
             variant="body2"
             lineHeight={1.6}

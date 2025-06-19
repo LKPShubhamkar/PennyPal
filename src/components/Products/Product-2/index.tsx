@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Box, Button, Typography, Stack, Paper } from "@mui/material";
+import { Box, Button, Typography, Stack } from "@mui/material";
 import CustomContainer from "../../common/CustomContainer";
+import Card from "../../common/Card";
 
 const featureContent = {
   "Equity Trading": {
@@ -72,7 +73,7 @@ const ProductTwo = () => {
           justifyContent="space-between"
           flexWrap="wrap"
           gap={2}
-          mb={7}
+          my={7}
         >
           {tabOptions.map((tab) => (
             <Button
@@ -106,22 +107,23 @@ const ProductTwo = () => {
         {/* Features */}
         <Stack direction="row" justifyContent="center" gap={4} flexWrap="wrap">
           {features.map((text, index) => (
-            <Paper
-              key={index}
-              elevation={3}
-              sx={{
-                px: 4,
-                py: 3,
-                borderRadius: 4,
-                textAlign: "center",
-                color: "#5633CD",
-                fontWeight: 500,
-                minWidth: 220,
-                whiteSpace: "pre-line",
-              }}
-            >
-              {text}
-            </Paper>
+            // <Paper
+            //   key={index}
+            //   elevation={3}
+            //   sx={{
+            //     px: 4,
+            //     py: 3,
+            //     borderRadius: 4,
+            //     textAlign: "center",
+            //     color: "#5633CD",
+            //     fontWeight: 500,
+            //     minWidth: 220,
+            //     whiteSpace: "pre-line",
+            //   }}
+            // >
+            <Card key={index} title={text} width={220} height={110} />
+
+            // </Paper>
           ))}
         </Stack>
       </Box>
