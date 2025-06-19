@@ -81,6 +81,7 @@ const HomeSeven = () => {
                     >
                       {item.label} -{" "}
                       <a
+                        target="_blank"
                         href={item.link}
                         style={{
                           color: "#5633CD",

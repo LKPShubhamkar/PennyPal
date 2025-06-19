@@ -74,7 +74,7 @@ const HomeThree = () => {
               </Typography>
 
               <Typography sx={{ fontSize: "1.05rem", mb: 4 }}>
-                All within the PennyPal ecosystem – mobile + web.
+                All within the PennyPal ecosystem – Mobile + Web.
               </Typography>
 
               <Stack spacing={3}>

@@ -15,7 +15,7 @@ const PhoneInput = () => {
         minWidth: 320,
         border: "1.5px solid rgb(88, 63, 172)",
         borderRadius: "22px",
-        mt: 10,
+        mt: 6,
         px: 0.5,
         py: 0.5,
         bgcolor: "#faf8ff",

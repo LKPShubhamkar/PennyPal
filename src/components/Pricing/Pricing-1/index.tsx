@@ -50,7 +50,7 @@ const PricingOne = () => {
                 fontSize: { xs: "2rem", md: "4.1rem" },
                 fontWeight: 700,
                 color: "#5633CD",
-                mb: 5,
+                mb: 2,
                 lineHeight: 1.1,
               }}
             >

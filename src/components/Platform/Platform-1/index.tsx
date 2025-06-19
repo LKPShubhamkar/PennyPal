@@ -71,11 +71,12 @@ const ProductThree = () => {
                     sx={{
                       fontSize: { xs: "4.5rem", md: "6.5rem" },
                       color: "white",
-                      WebkitTextStroke: "0.6px #5633CD",
+                      WebkitTextStroke: "0.8px #5633CD",
                       height: `${wordHeight}px`,
                       // lineHeight: `${wordHeight}px`,
                       textShadow: "0px 2px 15px rgba(86, 51, 205, 0.3)",
                       lineHeight: 1,
+                      fontWeight: 500,
                     }}
                   >
                     {word}

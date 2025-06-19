@@ -31,10 +31,10 @@ const TopArm = () => {
               // component="h2"
               sx={{
                 fontWeight: 600,
-                mb: 4,
+                mb: 1,
                 fontFamily: "Lato",
                 color: "#5633CD",
-                fontSize: "35px",
+                fontSize: "39px",
               }}
             >
               Smart Trading. Built on Experience.
@@ -43,7 +43,7 @@ const TopArm = () => {
               variant="body1"
               sx={{
                 mb: 2,
-                fontSize: "1rem",
+                fontSize: "1.1rem",
                 lineHeight: 1.7,
                 fontFamily: "Lato",
               }}
@@ -83,6 +83,7 @@ const TopArm = () => {
               maxHeight: 530,
               objectFit: "contain",
             }}
+            style={{ left: "20px" }}
           />
         </Box>
       </CustomContainer>

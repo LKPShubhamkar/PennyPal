@@ -132,8 +132,8 @@ const HomeOne = () => {
               <Typography
                 sx={{
                   color: "#222",
-                  fontSize: { xs: "1.05rem", md: "1.25rem" },
-                  mb: 2,
+                  fontSize: { xs: "1.05rem", md: "1.1rem" },
+                  mb: 4,
                 }}
               >
                 A trusted partner for smart trading and investing.
@@ -149,7 +149,7 @@ const HomeOne = () => {
                   fontSize: "1rem",
                   height: 44,
                   boxShadow: "0px 0px 5px #c792e6",
-                  mb: 4,
+                  mb: 6,
                 }}
                 target="_blank"
                 href="https://ekyc.pennypal.in/lkpsec/individual_pennypal"
@@ -157,10 +157,10 @@ const HomeOne = () => {
                 Open Free Account
               </Button>
 
-              <Typography sx={{ fontSize: { xs: "0.75rem", md: "1.1rem" } }}>
+              <Typography sx={{ fontSize: { xs: "0.75rem", md: "0.8rem" } }}>
                 I agree to PennyPal Terms and Conditions
               </Typography>
-              <Typography sx={{ fontSize: { xs: "0.75rem", md: "1.1rem" } }}>
+              <Typography sx={{ fontSize: { xs: "0.75rem", md: "0.8rem" } }}>
                 and Privacy Policy by continuing.
               </Typography>
             </Paper>
