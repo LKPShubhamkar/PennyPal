@@ -27,13 +27,14 @@ const TopArm = () => {
           {/* Left Side */}
           <Box sx={{ flex: 1 }}>
             <Typography
-              variant="h4"
-              component="h2"
+              // variant="h4"
+              // component="h2"
               sx={{
                 fontWeight: 600,
-                mb: 2,
+                mb: 4,
                 fontFamily: "Lato",
                 color: "#5633CD",
+                fontSize: "35px",
               }}
             >
               Smart Trading. Built on Experience.
@@ -53,7 +54,7 @@ const TopArm = () => {
               With a flat ₹10 per order across all segments, PennyPal enables
               Indian investors and traders to manage their trades without
               concern for high brokerage fees.
-            </Typography>
+              {/* </Typography>
             <Typography
               variant="body1"
               sx={{
@@ -62,7 +63,7 @@ const TopArm = () => {
                 lineHeight: 1.3,
                 fontFamily: "Lato",
               }}
-            >
+            > */}
               Behind this platform is extensive experience — PennyPal operates
               under LKP Securities Limited, a well-established name in the
               Indian capital markets since 1948.
@@ -79,7 +80,7 @@ const TopArm = () => {
             sx={{
               flex: 1,
               width: "100%",
-              maxHeight: 550,
+              maxHeight: 530,
               objectFit: "contain",
             }}
           />

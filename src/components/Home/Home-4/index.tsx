@@ -79,7 +79,12 @@ const HomeFour = () => {
               >
                 {featureList.map((feature, idx) => (
                   <Box key={idx}>
-                    <Card title={feature} width={170} height={85} />
+                    <Card
+                      title={feature}
+                      width={170}
+                      height={85}
+                      fontSize={"13px"}
+                    />
                   </Box>
                 ))}
               </Box>

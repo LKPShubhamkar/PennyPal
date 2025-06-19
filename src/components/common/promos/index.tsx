@@ -11,7 +11,7 @@ const Promos = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",
-        py: 10,
+        // py: 10,
       }}
     >
       <CustomContainer>

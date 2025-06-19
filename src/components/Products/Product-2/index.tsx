@@ -85,7 +85,7 @@ const ProductTwo = () => {
                 borderRadius: 0,
                 fontWeight: 600,
                 textTransform: "none",
-                fontSize: "1rem",
+                fontSize: "1.3rem",
               }}
             >
               {tab}
@@ -121,7 +121,13 @@ const ProductTwo = () => {
             //     whiteSpace: "pre-line",
             //   }}
             // >
-            <Card key={index} title={text} width={220} height={110} />
+            <Card
+              key={index}
+              title={text}
+              width={320}
+              height={160}
+              fontSize="20px"
+            />
 
             // </Paper>
           ))}

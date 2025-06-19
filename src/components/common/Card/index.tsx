@@ -4,9 +4,15 @@ interface CardProps {
   title: string;
   width?: number;
   height?: number;
+  fontSize?: string;
 }
 
-const Card = ({ title, width = 180, height = 90 }: CardProps) => {
+const Card = ({
+  title,
+  width = 180,
+  height = 90,
+  fontSize = "14px",
+}: CardProps) => {
   const innerBoxPadding = 10;
   const innerBoxWidth = width - innerBoxPadding * 2;
   const innerBoxHeight = height - innerBoxPadding * 2;
@@ -17,7 +23,7 @@ const Card = ({ title, width = 180, height = 90 }: CardProps) => {
         border: "0.4px solid #5633CD40",
         width,
         height,
-        borderRadius: `${height * 0.27}px`, // proportionally scale borderRadius
+        borderRadius: `${height * 0.27}px`,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -44,7 +50,7 @@ const Card = ({ title, width = 180, height = 90 }: CardProps) => {
         sx={{
           fontFamily: "Lato",
           fontWeight: 500,
-          fontSize: "14px",
+          fontSize, // ✅ using the passed fontSize
           lineHeight: "100%",
           textAlign: "center",
           color: "#5633CD",

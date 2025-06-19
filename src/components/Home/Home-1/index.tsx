@@ -96,7 +96,7 @@ const HomeOne = () => {
                 position: "absolute",
                 // left: 18, // adjust as needed for shadow offset
                 width: "90%",
-                height: { xs: "80%", md: "65%" },
+                height: { xs: "80%", md: "85%" },
                 bgcolor: "#5633CD",
                 borderRadius: 5,
                 // filter: "blur(2px)",
@@ -110,7 +110,7 @@ const HomeOne = () => {
               sx={{
                 borderRadius: 5,
                 p: 4,
-
+                height: { md: "95%" },
                 position: "relative",
                 bgcolor: "#F1EDFF",
                 textAlign: "center",
@@ -122,7 +122,8 @@ const HomeOne = () => {
                 sx={{
                   fontWeight: 800,
                   color: "#5633CD",
-                  mb: 1,
+                  mb: 2,
+                  fontSize: { md: "2.3rem" },
                   letterSpacing: "0.01em",
                 }}
               >
@@ -131,8 +132,8 @@ const HomeOne = () => {
               <Typography
                 sx={{
                   color: "#222",
-                  fontSize: "1.05rem",
-                  mb: 3,
+                  fontSize: { xs: "1.05rem", md: "1.25rem" },
+                  mb: 2,
                 }}
               >
                 A trusted partner for smart trading and investing.
@@ -148,16 +149,19 @@ const HomeOne = () => {
                   fontSize: "1rem",
                   height: 44,
                   boxShadow: "0px 0px 5px #c792e6",
-                  mb: 2,
+                  mb: 4,
                 }}
                 target="_blank"
                 href="https://ekyc.pennypal.in/lkpsec/individual_pennypal"
               >
                 Open Free Account
               </Button>
-              <Typography sx={{ fontSize: "0.75rem" }}>
-                I agree to PennyPal Terms and Conditions and Privacy Policy by
-                continuing.
+
+              <Typography sx={{ fontSize: { xs: "0.75rem", md: "1.1rem" } }}>
+                I agree to PennyPal Terms and Conditions
+              </Typography>
+              <Typography sx={{ fontSize: { xs: "0.75rem", md: "1.1rem" } }}>
+                and Privacy Policy by continuing.
               </Typography>
             </Paper>
           </Box>

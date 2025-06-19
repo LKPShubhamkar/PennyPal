@@ -14,12 +14,12 @@ const WhatWeStandFor = () => {
     },
     {
       img: Img2,
-      title: "Transparent Pricing",
+      title: "Flat Pricing, No Surprises",
       subtitle: "₹10/order across Equity, F&O, Currency and Commodities",
     },
     {
       img: Img3,
-      title: "Trusted Legacy",
+      title: "Market Access for All",
       subtitle: "Democratizing trading for retail investors across India",
     },
   ];

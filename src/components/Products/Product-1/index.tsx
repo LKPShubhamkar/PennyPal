@@ -26,7 +26,7 @@ const ProductOne = () => {
             alignItems: "center",
             justifyContent: "space-between",
             gap: 6,
-            minHeight: "90vh",
+            minHeight: "80vh",
           }}
         >
           {/* Left Section */}
@@ -43,8 +43,10 @@ const ProductOne = () => {
               Everything You Need. All in One Place.
             </Typography>
 
-            <Typography variant="body1" mb={4}>
+            <Typography variant="body1">
               From long-term investing to active trading PennyPal offers the
+            </Typography>
+            <Typography variant="body1" mb={4}>
               complete suite of financial products to meet your goals.
             </Typography>
 
@@ -52,14 +54,26 @@ const ProductOne = () => {
           </Box>
 
           {/* Right Image Section */}
-          <Box sx={{ flex: 1 }}>
+          {/* <Box sx={{ flex: 1 }}>
             <img
               src={ProductOneImg}
               alt="Investing Toolkit"
               style={{ width: "100%" }}
             />
-          </Box>
+          </Box> */}
+          <Box
+            component="img"
+            src={ProductOneImg}
+            alt="Smart Trading"
+            sx={{
+              flex: 1,
+              width: "100%",
+              maxHeight: 380,
+              objectFit: "contain",
+            }}
+          />
         </Box>
+        {/* </Box> */}
       </CustomContainer>
     </Box>
   );

@@ -19,7 +19,7 @@ const ProductThree = () => {
   }, []);
 
   // Each word block is based on font size 6.3rem ~ 101px, use 104px for safety
-  const wordHeight = 104;
+  const wordHeight = 120; // Increased from 104 for safer buffer
 
   return (
     <Box
@@ -70,11 +70,12 @@ const ProductThree = () => {
                     key={i}
                     sx={{
                       fontSize: { xs: "4.5rem", md: "6.5rem" },
-                      color: "transparent",
-                      WebkitTextStroke: "1px #5633CD",
+                      color: "white",
+                      WebkitTextStroke: "0.6px #5633CD",
                       height: `${wordHeight}px`,
-                      lineHeight: `${wordHeight}px`,
+                      // lineHeight: `${wordHeight}px`,
                       textShadow: "0px 2px 15px rgba(86, 51, 205, 0.3)",
+                      lineHeight: 1,
                     }}
                   >
                     {word}

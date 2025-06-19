@@ -12,8 +12,7 @@ const PricingOne = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",
-        // maxHeight: "80vh",
-        py: 10,
+        // py: 10,
       }}
     >
       {" "}
@@ -23,7 +22,7 @@ const PricingOne = () => {
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             alignItems: "center",
-            minHeight: "80vh",
+            // minHeight: "10vh",
             py: { xs: 4, md: 0 },
           }}
         >
@@ -44,20 +43,24 @@ const PricingOne = () => {
             >
               Flat ₹10/Order. Always.
             </Typography>
+            <br />
+            <br />
             <Typography
               sx={{
-                fontSize: { xs: "2rem", md: "3.4rem" },
-                fontWeight: 550,
+                fontSize: { xs: "2rem", md: "4.1rem" },
+                fontWeight: 700,
                 color: "#5633CD",
-                mb: 2,
+                mb: 5,
                 lineHeight: 1.1,
               }}
             >
               Simple. Transparent. No Fine Print.
             </Typography>
+            <Typography fontSize="1.125rem">
+              Whether you’re buying one share or a hundred,
+            </Typography>
             <Typography fontSize="1.125rem" mb={3}>
-              Whether you’re buying one share or a hundred, we charge a flat ₹10
-              per order. That’s it.
+              we charge a flat ₹10 per order. That’s it.
             </Typography>
             <PhoneInput />
           </Box>
@@ -78,9 +81,9 @@ const PricingOne = () => {
               src={PricingOneImg}
               alt="Pricing Illustration"
               sx={{
-                maxWidth: { xs: 280, md: 480 },
+                maxWidth: { xs: 280, md: 550 },
                 width: "100%",
-                height: "auto",
+                // height: "auto",
               }}
             />
           </Box>

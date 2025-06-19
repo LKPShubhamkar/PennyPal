@@ -53,12 +53,14 @@ const PlatformThree = () => {
             src={PlatformThreeImg}
             alt="Mobile App UI"
             sx={{
-              width: { xs: "120%", md: "160%" },
+              width: { xs: "120%", md: "200%" },
               maxWidth: "none",
-              transform: { xs: "translateX(-10%)", md: "translateX(-25%)" },
+              transform: { xs: "translateX(-10%)", md: "translateX(-38%)" },
             }}
           />
         </Box>
+
+        {/* </Box> */}
         {/* Right Image */}
         <Box sx={{ flex: 1, pl: { md: 12 } }}>
           <Typography
