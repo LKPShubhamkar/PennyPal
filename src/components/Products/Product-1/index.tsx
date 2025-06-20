@@ -1,12 +1,11 @@
 import { Box, Typography } from "@mui/material";
 import PhoneInput from "../../common/PhoneInput";
-import ProductOneImg from "../../../assets/product_1.png"; // Make sure this path is correct
-import productFrame from "../../../assets/Product1frame.png"; // Make sure this path is correct
+import ProductOneImg from "../../../assets/product_1.png"; // Ensure path is correct
+import productFrame from "../../../assets/Product1frame.png"; // Ensure path is correct
 import CustomContainer from "../../common/CustomContainer";
 
 const ProductOne = () => {
   return (
-    // <Box sx={{ bgcolor: "#fff", pt: 10,  }}>
     <Box
       sx={{
         backgroundImage: `url(${productFrame})`,
@@ -34,12 +33,22 @@ const ProductOne = () => {
             <Typography
               variant="h2"
               fontWeight={700}
-              sx={{ color: "#5633CD", mb: 2 }}
+              sx={{
+                color: "#5633CD",
+                mb: 2,
+                mt: { xs: 4 },
+                fontSize: { xs: "2.5rem", md: "3.8rem" },
+              }}
             >
               Your Complete Investing Toolkit
             </Typography>
 
-            <Typography variant="h4" fontWeight={500} mb={2}>
+            <Typography
+              variant="h4"
+              fontWeight={500}
+              mb={2}
+              sx={{ fontSize: { xs: "1.2rem", md: "2.2rem" } }}
+            >
               Everything You Need. All in One Place.
             </Typography>
 

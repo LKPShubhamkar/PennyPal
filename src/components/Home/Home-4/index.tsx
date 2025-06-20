@@ -3,6 +3,7 @@ import HomeFourImage from "../../../../src/assets/HomeFour.png"; // Adjust path 
 import HomeFrame from "../../../../src/assets/Home4Frame.png";
 import CustomContainer from "../../common/CustomContainer";
 import Card from "../../common/Card";
+import { useTheme, useMediaQuery } from "@mui/material";
 
 const featureList = [
   "Trading View Chart Integration",
@@ -13,6 +14,8 @@ const featureList = [
 ];
 
 const HomeFour = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box
       sx={{
@@ -81,9 +84,9 @@ const HomeFour = () => {
                   <Box key={idx}>
                     <Card
                       title={feature}
-                      width={170}
+                      width={isMobile ? 320 : 170}
                       height={85}
-                      fontSize={"13px"}
+                      fontSize={isMobile ? "16px" : "13px"}
                     />
                   </Box>
                 ))}

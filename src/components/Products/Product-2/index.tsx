@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { Box, Button, Typography, Stack } from "@mui/material";
+import {
+  Box,
+  Button,
+  Typography,
+  Stack,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import CustomContainer from "../../common/CustomContainer";
 import Card from "../../common/Card";
 
@@ -61,31 +68,36 @@ const tabOptions = Object.keys(featureContent) as TabKey[];
 
 const ProductTwo = () => {
   const [activeTab, setActiveTab] = useState<TabKey>("Equity Trading");
-
   const { subtitle, features } = featureContent[activeTab];
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // for <600px screens
 
   return (
     <CustomContainer>
-      <Box sx={{ minHeight: "50vh" }}>
+      <Box sx={{ minHeight: "50vh", px: { xs: 2, sm: 3, md: 0 } }}>
         {/* Tabs */}
         <Stack
-          direction="row"
+          direction={isMobile ? "column" : "row"}
           justifyContent="space-between"
+          alignItems={isMobile ? "flex-start" : "center"}
           flexWrap="wrap"
-          gap={2}
+          gap={isMobile ? 1 : 2}
           my={7}
         >
           {tabOptions.map((tab) => (
             <Button
               key={tab}
               onClick={() => setActiveTab(tab)}
+              fullWidth={isMobile}
               sx={{
                 color: "#5633CD",
                 borderBottom: activeTab === tab ? "2px solid #5633CD" : "none",
                 borderRadius: 0,
                 fontWeight: 600,
                 textTransform: "none",
-                fontSize: "1.3rem",
+                fontSize: { xs: "1rem", sm: "1.1rem", md: "1.3rem" },
+                justifyContent: isMobile ? "flex-start" : "center",
               }}
             >
               {tab}
@@ -100,36 +112,33 @@ const ProductTwo = () => {
           fontWeight={600}
           color="#5633CD"
           mb={6}
+          sx={{
+            fontSize: { xs: "1.2rem", sm: "1.5rem" },
+            px: { xs: 1, sm: 2, md: 0 },
+          }}
         >
           {subtitle}
         </Typography>
 
         {/* Features */}
-        <Stack direction="row" justifyContent="center" gap={4} flexWrap="wrap">
+        <Stack
+          direction="row"
+          justifyContent="center"
+          gap={4}
+          flexWrap="wrap"
+          sx={{
+            flexDirection: { xs: "column", sm: "row" },
+            alignItems: "center",
+          }}
+        >
           {features.map((text, index) => (
-            // <Paper
-            //   key={index}
-            //   elevation={3}
-            //   sx={{
-            //     px: 4,
-            //     py: 3,
-            //     borderRadius: 4,
-            //     textAlign: "center",
-            //     color: "#5633CD",
-            //     fontWeight: 500,
-            //     minWidth: 220,
-            //     whiteSpace: "pre-line",
-            //   }}
-            // >
             <Card
               key={index}
               title={text}
-              width={320}
-              height={160}
-              fontSize="20px"
+              width={isMobile ? 320 : 320} // keep fixed width number, or reduce for mobile if needed
+              height={isMobile ? 120 : 160}
+              fontSize={isMobile ? "16px" : "20px"}
             />
-
-            // </Paper>
           ))}
         </Stack>
       </Box>

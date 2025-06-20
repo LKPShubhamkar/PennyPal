@@ -6,6 +6,7 @@ import pricing2frameEdited from "../../../assets/Pricing3frameeditied.png";
 import CustomTable from "../../common/Table";
 import Card from "../../common/Card";
 import CustomContainer from "../../common/CustomContainer";
+import { useTheme, useMediaQuery } from "@mui/material";
 
 const features = [
   "No Account Opening Fee",
@@ -16,6 +17,8 @@ const features = [
 ];
 
 const Pricingtwo = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
       <Box
@@ -62,9 +65,9 @@ const Pricingtwo = () => {
               <Card
                 key={idx}
                 title={feature}
-                width={220}
+                width={!isMobile ? 220 : 320}
                 height={110}
-                fontSize="16px"
+                fontSize={!isMobile ? "16px" : "18px"}
               />
             ))}
           </Stack>

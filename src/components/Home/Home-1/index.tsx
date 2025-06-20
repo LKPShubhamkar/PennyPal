@@ -133,7 +133,7 @@ const HomeOne = () => {
                 sx={{
                   color: "#222",
                   fontSize: { xs: "1.05rem", md: "1.1rem" },
-                  mb: 4,
+                  mb: { xs: 2, md: 4 },
                 }}
               >
                 A trusted partner for smart trading and investing.
@@ -149,7 +149,7 @@ const HomeOne = () => {
                   fontSize: "1rem",
                   height: 44,
                   boxShadow: "0px 0px 5px #c792e6",
-                  mb: 6,
+                  mb: { xs: 3, md: 6 },
                 }}
                 target="_blank"
                 href="https://ekyc.pennypal.in/lkpsec/individual_pennypal"
