@@ -161,7 +161,7 @@ const PlatformTwo = () => {
             alt="Mobile App UI"
             sx={{
               // width: { xs: "100%", md: "220px" },
-              maxWidth: "120%",
+              maxWidth: "110%",
               // height: "auto",
               // minHeight: "630px",
             }}

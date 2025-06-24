@@ -1,8 +1,8 @@
-import { Box, Grid, Stack, Typography } from "@mui/material";
-import AppStore from "../../../assets/appstore.png";
-import PlayStore from "../../../assets/playstore.png";
+import { Box, Stack, Typography } from "@mui/material";
+// import AppStore from "../../../assets/appstore.png";
+// import PlayStore from "../../../assets/playstore.png";
 import pricing1frame from "../../../assets/pricing2frame.png";
-import pricing2frameEdited from "../../../assets/Pricing3frameeditied.png";
+// import pricing2frameEdited from "../../../assets/Pricing3frameeditied.png";
 import CustomTable from "../../common/Table";
 import Card from "../../common/Card";
 import CustomContainer from "../../common/CustomContainer";
@@ -18,7 +18,8 @@ const features = [
 
 const Pricingtwo = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // e.g., <600px
+  const desktopRows = [features.slice(0, 3), features.slice(3, 5)];
   return (
     <>
       <Box
@@ -51,29 +52,52 @@ const Pricingtwo = () => {
 
           {/* Responsive Features Grid */}
           <Stack
-            direction={{ xs: "column", sm: "row" }}
-            spacing={{ xs: 2, sm: 4 }}
-            justifyContent={{ xs: "center", sm: "space-between" }}
-            alignItems={{ xs: "center", sm: "stretch" }}
+            direction="column"
+            spacing={4}
             sx={{
               pt: "2rem",
-              flexWrap: "wrap",
               mb: 8,
             }}
           >
-            {features.map((feature, idx) => (
-              <Card
-                key={idx}
-                title={feature}
-                width={!isMobile ? 220 : 320}
-                height={110}
-                fontSize={!isMobile ? "16px" : "18px"}
-              />
-            ))}
+            {!isMobile ? (
+              // Desktop view: 3 cards on top, 2 below
+              desktopRows.map((row, rowIndex) => (
+                <Stack
+                  key={rowIndex}
+                  direction="row"
+                  spacing={4}
+                  justifyContent="center"
+                  flexWrap="nowrap"
+                >
+                  {row.map((feature, idx) => (
+                    <Card
+                      key={idx}
+                      title={feature}
+                      width={220}
+                      height={110}
+                      fontSize="16px"
+                    />
+                  ))}
+                </Stack>
+              ))
+            ) : (
+              // Mobile view: single column
+              <Stack spacing={2} alignItems="center">
+                {features.map((feature, idx) => (
+                  <Card
+                    key={idx}
+                    title={feature}
+                    width={320}
+                    height={110}
+                    fontSize="18px"
+                  />
+                ))}
+              </Stack>
+            )}
           </Stack>
         </CustomContainer>
       </Box>
-      <Box
+      {/* <Box
         sx={{
           backgroundImage: `url(${pricing2frameEdited})`,
           backgroundSize: "cover",
@@ -82,22 +106,23 @@ const Pricingtwo = () => {
           maxHeight: "100%",
           py: 2,
         }}
-      >
-        <CustomContainer>
-          {/* Call to Action Section */}
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "100%",
-              mx: "auto",
-              my: 6,
-              px: 2,
-            }}
-          >
-            <Typography
+      > */}
+      {/* <CustomContainer> */}
+      {/* Call to Action Section */}
+      {/* {!isMobile && (
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "100%",
+                mx: "auto",
+                my: 3,
+                px: 2,
+              }}
+            > */}
+      {/* <Typography
               variant="h3"
               align="center"
               sx={{
@@ -121,51 +146,52 @@ const Pricingtwo = () => {
               }}
             >
               free account now
-            </Typography>
-            <Typography
-              align="center"
-              sx={{ fontSize: { xs: "1rem", md: "1.1rem" }, pb: 2 }}
-            >
-              Download the app now.
-            </Typography>
-            <Grid
-              container
-              spacing={2}
-              justifyContent="center"
-              alignItems="center"
-            >
-              <Grid>
-                <a
-                  href="https://apps.apple.com/in/app/lkp-pennypal/id6740027396"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Box
-                    component="img"
-                    src={AppStore}
-                    alt="App Store"
-                    sx={{ height: 40, width: 120 }}
-                  />
-                </a>
+            </Typography> */}
+      {/* <Typography
+                align="center"
+                sx={{ fontSize: { xs: "1rem", md: "1.1rem" }, pb: 2 }}
+              >
+                Download the app now.
+              </Typography>
+              <Grid
+                container
+                spacing={2}
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Grid>
+                  <a
+                    href="https://apps.apple.com/in/app/lkp-pennypal/id6740027396"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Box
+                      component="img"
+                      src={AppStore}
+                      alt="App Store"
+                      sx={{ height: 40, width: 120 }}
+                    />
+                  </a>
+                </Grid>
+                <Grid>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.lkpsec.pennypal&hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Box
+                      component="img"
+                      src={PlayStore}
+                      alt="Google Play"
+                      sx={{ height: 40, width: 120 }}
+                    />
+                  </a>
+                </Grid>
               </Grid>
-              <Grid>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.lkpsec.pennypal&hl=en"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Box
-                    component="img"
-                    src={PlayStore}
-                    alt="Google Play"
-                    sx={{ height: 40, width: 120 }}
-                  />
-                </a>
-              </Grid>
-            </Grid>
-          </Box>
-        </CustomContainer>
-      </Box>
+            </Box> */}
+      {/* )} */}
+      {/* </CustomContainer> */}
+      {/* </Box> */}
     </>
   );
 };

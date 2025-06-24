@@ -46,42 +46,41 @@ const Header = () => {
             <Link to="/">
               <img src="logo.png" alt="PennyPal" style={{ height: 50 }} />
             </Link>
-          </Box>
-
-          {/* Desktop Menu */}
-          <Box
-            sx={{
-              display: { xs: "none", md: "flex" },
-              alignItems: "center",
-            }}
-          >
-            {navLinks.map((item) => {
-              const isActive = location.pathname === item.path;
-              return (
-                <Button
-                  key={item.label}
-                  component={Link}
-                  to={item.path}
-                  sx={{
-                    color: isActive ? "#5633CD" : "#000",
-                    textTransform: "none",
-                    fontWeight: isActive ? 600 : 400,
-                    fontSize: "0.95rem",
-                    margin: "0 12px",
-                    minWidth: "unset",
-                    lineHeight: "100%",
-                    letterSpacing: "0%",
-                    borderBottom: isActive
-                      ? "2.5px solid #5633CD"
-                      : "2.5px solid transparent",
-                    borderRadius: 0,
-                    transition: "all 0.2s",
-                  }}
-                >
-                  {item.label}
-                </Button>
-              );
-            })}
+            <Box
+              sx={{
+                display: { xs: "none", md: "flex" },
+                alignItems: "center",
+                paddingLeft: "60px",
+              }}
+            >
+              {navLinks.map((item) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <Button
+                    key={item.label}
+                    component={Link}
+                    to={item.path}
+                    sx={{
+                      color: isActive ? "#5633CD" : "#000",
+                      textTransform: "none",
+                      fontWeight: isActive ? 600 : 400,
+                      fontSize: "0.95rem",
+                      margin: "0 12px",
+                      minWidth: "unset",
+                      lineHeight: "100%",
+                      letterSpacing: "0%",
+                      borderBottom: isActive
+                        ? "2.5px solid #5633CD"
+                        : "2.5px solid transparent",
+                      borderRadius: 0,
+                      transition: "all 0.2s",
+                    }}
+                  >
+                    {item.label}
+                  </Button>
+                );
+              })}
+            </Box>
           </Box>
 
           {/* Mobile Hamburger */}

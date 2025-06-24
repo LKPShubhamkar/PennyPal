@@ -55,7 +55,7 @@ const PlatformThree = () => {
             sx={{
               width: { xs: "120%", md: "200%" },
               maxWidth: "none",
-              transform: { xs: "translateX(-10%)", md: "translateX(-38%)" },
+              transform: { xs: "translateX(-10%)", md: "translateX(-32%)" },
             }}
           />
         </Box>

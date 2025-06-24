@@ -73,6 +73,14 @@ const HomeSeven = () => {
                     direction="row"
                     alignItems="center"
                     spacing={2}
+                    // p={1}
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #EFEBFC 0%, #FBFBFF 100%)",
+                      borderRadius: "50px",
+                      width: "fit-content",
+                      padding: "8px 16px",
+                    }}
                   >
                     {item.icon}
                     <Typography
