@@ -11,7 +11,7 @@ const TopArm = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",
-        py: 10,
+        py: 2,
       }}
     >
       <CustomContainer>

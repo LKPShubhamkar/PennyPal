@@ -1,8 +1,53 @@
-import { Box, Typography, Paper, Button } from "@mui/material";
+import { Box, Typography, Paper, Button, TextField } from "@mui/material";
 import homePage from "../../../assets/HomePage.png";
 import CustomContainer from "../../common/CustomContainer";
+import { useState } from "react";
+import { apiServices } from "../../../services";
 
 const HomeOne = () => {
+  const [phone, setPhone] = useState("");
+  const { VITE_SECRET_KEY } = import.meta.env;
+
+  const handleMobileLogin = async () => {
+    const trimmedPhone = phone.trim();
+
+    if (!/^\d{10}$/.test(trimmedPhone)) {
+      console.error("Invalid phone number");
+      return;
+    }
+
+    const payload = {
+      company: "lkpsec",
+      workflowName: "individual_pennypal",
+      secret_key: VITE_SECRET_KEY,
+      unique_keys: {
+        mobile_number: trimmedPhone,
+      },
+    };
+
+    try {
+      const response = await apiServices.ExternalSSORoute(payload);
+      const originalUrl = response?.data?.url;
+
+      if (originalUrl) {
+        //  Replace domain
+        const modifiedUrl = originalUrl.replace(
+          "live.meon.co.in",
+          "ekyc.pennypal.in"
+        );
+
+        //  Open new tab with modified URL
+        window.open(modifiedUrl, "_blank");
+      } else {
+        console.error("No redirect URL found in response");
+      }
+    } catch (error) {
+      console.error("Failed to call SSO API:", error);
+    } finally {
+      setPhone("");
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -84,22 +129,20 @@ const HomeOne = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              position: "relative",
               bgcolor: "transparent",
               p: 2,
               right: { md: "5rem" },
-              position: "relative",
             }}
           >
-            {/* Rotated shadow box */}
+            {/* Rotated Shadow Box */}
             <Box
               sx={{
                 position: "absolute",
-                // left: 18, // adjust as needed for shadow offset
                 width: "90%",
-                height: { xs: "80%", md: "85%" },
+                height: { xs: "85%", md: "85%" },
                 bgcolor: "#5633CD",
                 borderRadius: 5,
-                // filter: "blur(2px)",
                 transform: "rotate(8deg)",
                 zIndex: 0,
               }}
@@ -109,8 +152,9 @@ const HomeOne = () => {
               elevation={8}
               sx={{
                 borderRadius: 5,
-                p: 4,
-                height: { md: "95%" },
+                p: { xs: 2, md: 4 },
+                height: { md: "100%" },
+                width: "100%",
                 position: "relative",
                 bgcolor: "#F1EDFF",
                 textAlign: "center",
@@ -122,8 +166,7 @@ const HomeOne = () => {
                 sx={{
                   fontWeight: 800,
                   color: "#5633CD",
-                  mb: 2,
-                  fontSize: { md: "2.3rem" },
+                  fontSize: { xs: "2rem", md: "2.3rem" },
                   letterSpacing: "0.01em",
                 }}
               >
@@ -133,13 +176,69 @@ const HomeOne = () => {
                 sx={{
                   color: "#222",
                   fontSize: { xs: "1.05rem", md: "1.1rem" },
-                  mb: { xs: 2, md: 4 },
+                  mb: 2,
                 }}
               >
                 A trusted partner for smart trading and investing.
               </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  mb: 3,
+                  gap: 1,
+                }}
+              >
+                <TextField
+                  placeholder="Enter your number"
+                  variant="outlined"
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => {
+                    const numericInput = e.target.value
+                      .replace(/\D/g, "")
+                      .slice(0, 10);
+                    setPhone(numericInput);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") handleMobileLogin();
+                  }}
+                  inputProps={{
+                    inputMode: "numeric",
+                    maxLength: 10,
+                  }}
+                  sx={{
+                    flexGrow: 1,
+                    "& .MuiOutlinedInput-root": {
+                      borderRadius: "22px",
+                      bgcolor: "white",
+                    },
+                    "& .MuiOutlinedInput-input": {
+                      padding: "12px",
+                    },
+                  }}
+                  InputProps={{
+                    startAdornment: (
+                      <Typography
+                        sx={{
+                          fontWeight: 500,
+                          color: "#000",
+                          fontSize: "1rem",
 
+                          // mr: 7,
+                          userSelect: "none",
+                        }}
+                      >
+                        +91
+                      </Typography>
+                    ),
+                    endAdornment: null, // remove adornment here
+                  }}
+                />
+              </Box>
               <Button
+                fullWidth
+                onClick={handleMobileLogin}
                 sx={{
                   border: "1px solid #5633CD",
                   color: "#5633CD",
@@ -151,18 +250,17 @@ const HomeOne = () => {
                   boxShadow: "0px 0px 5px #c792e6",
                   mb: { xs: 3, md: 6 },
                 }}
-                target="_blank"
-                href="https://ekyc.pennypal.in/lkpsec/individual_pennypal"
               >
                 Open Free Account
               </Button>
-
-              <Typography sx={{ fontSize: { xs: "0.75rem", md: "0.8rem" } }}>
-                I agree to PennyPal Terms and Conditions
-              </Typography>
-              <Typography sx={{ fontSize: { xs: "0.75rem", md: "0.8rem" } }}>
-                and Privacy Policy by continuing.
-              </Typography>
+              <div>
+                <Typography sx={{ fontSize: { xs: "0.75rem", md: "0.8rem" } }}>
+                  I agree to PennyPal Terms and Conditions
+                </Typography>
+                <Typography sx={{ fontSize: { xs: "0.75rem", md: "0.8rem" } }}>
+                  and Privacy Policy by continuing.
+                </Typography>
+              </div>
             </Paper>
           </Box>
         </Box>
