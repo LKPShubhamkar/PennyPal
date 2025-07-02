@@ -1,11 +1,17 @@
-import { Box, IconButton, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  InputAdornment,
+  TextField,
+  Typography,
+} from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { apiServices } from "../../../services"; // adjust path if needed
 import { useState } from "react";
 
 const PhoneInput = () => {
+  const [hovered, setHovered] = useState(false);
   const [phone, setPhone] = useState("");
-  const { VITE_SECRET_KEY } = import.meta.env;
 
   const handleMobileLogin = async () => {
     const trimmedPhone = phone.trim();
@@ -16,26 +22,26 @@ const PhoneInput = () => {
     }
 
     const payload = {
-      company: "lkpsec",
-      workflowName: "individual_pennypal",
-      secret_key: VITE_SECRET_KEY,
-      unique_keys: {
-        mobile_number: trimmedPhone,
-      },
+      mobileNumber: trimmedPhone,
+    };
+
+    const encodedCredentials = btoa("admin:admin");
+    const customHeaders = {
+      Authorization: `Basic ${encodedCredentials}`,
     };
 
     try {
-      const response = await apiServices.ExternalSSORoute(payload);
-      const originalUrl = response?.data?.url;
+      const response = await apiServices.ExternalSSORoute(
+        payload,
+        customHeaders
+      );
+      const originalUrl = response?.data?.data?.url;
 
       if (originalUrl) {
-        //  Replace domain
         const modifiedUrl = originalUrl.replace(
           "live.meon.co.in",
           "ekyc.pennypal.in"
         );
-
-        //  Open new tab with modified URL
         window.open(modifiedUrl, "_blank");
       } else {
         console.error("No redirect URL found in response");
@@ -49,28 +55,32 @@ const PhoneInput = () => {
 
   return (
     <>
+      <Typography sx={{ py: 1, fontWeight: 500 }}>Open Free Account</Typography>
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
           width: "100%",
           maxWidth: 400,
+          bgcolor: "#fff",
+          borderRadius: "30px",
+          // boxShadow: "0 0 0 1px #5633CD",
+          border: "1px solid #5633CD",
+          pl: 1,
+          boxShadow: " 0px 6px 11.8px 2px #00000029",
         }}
       >
         <TextField
-          placeholder="Enter your mobile number"
+          placeholder="Enter Mobile Number"
           variant="outlined"
           type="tel"
           value={phone}
           onChange={(e) => {
-            const input = e.target.value;
-            const numericInput = input.replace(/\D/g, "").slice(0, 10);
+            const numericInput = e.target.value.replace(/\D/g, "").slice(0, 10);
             setPhone(numericInput);
           }}
           onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              handleMobileLogin();
-            }
+            if (e.key === "Enter") handleMobileLogin();
           }}
           inputProps={{
             inputMode: "numeric",
@@ -79,50 +89,62 @@ const PhoneInput = () => {
           sx={{
             flexGrow: 1,
             "& .MuiOutlinedInput-root": {
-              borderTopRightRadius: 0,
-              borderBottomRightRadius: 0,
-              borderTopLeftRadius: "22px",
-              borderBottomLeftRadius: "22px",
+              border: "none",
+              borderRadius: "30px",
+              px: 1,
+            },
+            "& .MuiOutlinedInput-notchedOutline": {
+              border: "none",
             },
             "& .MuiOutlinedInput-input": {
-              padding: "12px",
+              py: 1.5,
+              pl: 0,
             },
           }}
           InputProps={{
             startAdornment: (
-              <Typography
-                sx={{
-                  fontWeight: 500,
-                  color: "#000",
-                  fontSize: "1rem",
-                  // mr: 1,
-                  userSelect: "none",
-                }}
-              >
-                +91
-              </Typography>
+              <InputAdornment position="start">
+                <Typography sx={{ px: 1, color: "#000", fontWeight: 500 }}>
+                  +91
+                </Typography>
+              </InputAdornment>
+            ),
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  onClick={handleMobileLogin}
+                  onMouseEnter={() => setHovered(true)}
+                  onMouseLeave={() => setHovered(false)}
+                  sx={{
+                    bgcolor: "#5633CD",
+                    color: "#fff",
+                    borderRadius: "30px",
+                    width: 80,
+                    height: 35,
+                    border: "0.5px solid #5633CD",
+                    minWidth: 0,
+                    flexShrink: 0,
+                    transition: "background-color 0.3s ease",
+                    boxSizing: "border-box",
+                    "&:hover": {
+                      bgcolor: "#4b2dbf",
+                    },
+                    "& svg": {
+                      transition: "transform 0.3s ease",
+                      transform: hovered ? "translateX(18px)" : "translateX(0)",
+                      fontSize: 28,
+                    },
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <ArrowForwardIcon />
+                </IconButton>
+              </InputAdornment>
             ),
           }}
         />
-
-        <IconButton
-          sx={{
-            bgcolor: "#5633CD",
-            color: "#fff",
-            borderRadius: "0 22px 22px 0",
-            height: 48,
-            px: 4,
-            minWidth: "auto",
-            ml: -1,
-            "&:hover": {
-              bgcolor: "#4b2dbf",
-            },
-          }}
-          onClick={handleMobileLogin}
-          aria-label="Submit phone number"
-        >
-          <ArrowForwardIcon />
-        </IconButton>
       </Box>
     </>
   );

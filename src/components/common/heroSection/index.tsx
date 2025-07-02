@@ -11,7 +11,7 @@ const TopArm = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",
-        py: 2,
+        py: 10,
       }}
     >
       <CustomContainer>
@@ -42,7 +42,7 @@ const TopArm = () => {
             <Typography
               variant="body1"
               sx={{
-                mb: 2,
+                mb: 6,
                 fontSize: "1.1rem",
                 lineHeight: 1.7,
                 fontFamily: "Lato",
@@ -53,20 +53,9 @@ const TopArm = () => {
               investors who prefer simplicity, transparency, and affordability.
               With a flat ₹10 per order across all segments, PennyPal enables
               Indian investors and traders to manage their trades without
-              concern for high brokerage fees.
-              {/* </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                mb: 4,
-                fontSize: "1rem",
-                lineHeight: 1.3,
-                fontFamily: "Lato",
-              }}
-            > */}
-              Behind this platform is extensive experience — PennyPal operates
-              under LKP Securities Limited, a well-established name in the
-              Indian capital markets since 1948.
+              concern for high brokerage fees. Behind this platform is extensive
+              experience — PennyPal operates under LKP Securities Limited, a
+              well-established name in the Indian capital markets since 1948.
             </Typography>
             {/* TextField Section */}
             <PhoneInput />

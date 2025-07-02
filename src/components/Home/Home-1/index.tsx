@@ -6,7 +6,6 @@ import { apiServices } from "../../../services";
 
 const HomeOne = () => {
   const [phone, setPhone] = useState("");
-  const { VITE_SECRET_KEY } = import.meta.env;
 
   const handleMobileLogin = async () => {
     const trimmedPhone = phone.trim();
@@ -17,26 +16,26 @@ const HomeOne = () => {
     }
 
     const payload = {
-      company: "lkpsec",
-      workflowName: "individual_pennypal",
-      secret_key: VITE_SECRET_KEY,
-      unique_keys: {
-        mobile_number: trimmedPhone,
-      },
+      mobileNumber: trimmedPhone,
+    };
+
+    const encodedCredentials = btoa("admin:admin");
+    const customHeaders = {
+      Authorization: `Basic ${encodedCredentials}`,
     };
 
     try {
-      const response = await apiServices.ExternalSSORoute(payload);
-      const originalUrl = response?.data?.url;
+      const response = await apiServices.ExternalSSORoute(
+        payload,
+        customHeaders
+      );
+      const originalUrl = response?.data?.data?.url;
 
       if (originalUrl) {
-        //  Replace domain
         const modifiedUrl = originalUrl.replace(
           "live.meon.co.in",
           "ekyc.pennypal.in"
         );
-
-        //  Open new tab with modified URL
         window.open(modifiedUrl, "_blank");
       } else {
         console.error("No redirect URL found in response");
@@ -212,6 +211,22 @@ const HomeOne = () => {
                     "& .MuiOutlinedInput-root": {
                       borderRadius: "22px",
                       bgcolor: "white",
+
+                      // ✅ Default border color
+                      "& fieldset": {
+                        borderColor: "#5633CD",
+                      },
+
+                      // ✅ Hover state
+                      "&:hover fieldset": {
+                        borderColor: "#5633CD",
+                      },
+
+                      // ✅ Focused (active) state
+                      "&.Mui-focused fieldset": {
+                        borderColor: "#5633CD",
+                        borderWidth: ".5px", // optional: make it slightly thicker on focus
+                      },
                     },
                     "& .MuiOutlinedInput-input": {
                       padding: "12px",
@@ -224,15 +239,13 @@ const HomeOne = () => {
                           fontWeight: 500,
                           color: "#000",
                           fontSize: "1rem",
-
-                          // mr: 7,
                           userSelect: "none",
                         }}
                       >
                         +91
                       </Typography>
                     ),
-                    endAdornment: null, // remove adornment here
+                    endAdornment: null,
                   }}
                 />
               </Box>
