@@ -266,14 +266,37 @@ const HomeOne = () => {
               >
                 Open Free Account
               </Button>
-              <div>
-                <Typography sx={{ fontSize: { xs: "0.75rem", md: "0.8rem" } }}>
+              <Box
+                component="a"
+                href="https://www.lkpsec.com/privacypolicy"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  textDecoration: "none",
+                  color: "#000",
+                  cursor: "pointer",
+                  "&:hover": {
+                    color: "#5633CD",
+                  },
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontSize: { xs: "0.75rem", md: "0.8rem" },
+                    display: "block",
+                  }}
+                >
                   I agree to PennyPal Terms and Conditions
                 </Typography>
-                <Typography sx={{ fontSize: { xs: "0.75rem", md: "0.8rem" } }}>
+                <Typography
+                  sx={{
+                    fontSize: { xs: "0.75rem", md: "0.8rem" },
+                    display: "block",
+                  }}
+                >
                   and Privacy Policy by continuing.
                 </Typography>
-              </div>
+              </Box>
             </Paper>
           </Box>
         </Box>

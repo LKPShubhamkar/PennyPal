@@ -293,7 +293,7 @@ const Footer = () => {
             <Stack direction="row" alignItems="center" spacing={1}>
               <PhoneIcon fontSize="small" />
               <Typography variant="body1" fontSize={{ xs: 14, sm: 16 }}>
-                022-66353110
+                022-66351310
               </Typography>
             </Stack>
           </Box>
@@ -378,7 +378,8 @@ const Footer = () => {
           your contact information to third parties. Please note that by
           subscribing to the above-mentioned details, you are authorizing us to
           call/SMS you for a period of 12 months even if you may be registered
-          under DND. We shall Call/SMS you for a period of 12 months.
+          under DND. We shall Call/SMS you for a period of 12 months. Brokerage
+          will not exceed SEBI prescribed limit.
         </Typography>
       </Box>
 
