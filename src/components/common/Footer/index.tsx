@@ -7,6 +7,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import XIcon from "@mui/icons-material/X";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import PersonIcon from "@mui/icons-material/Person";
 import AppStore from "../../../assets/appstore.png";
@@ -287,13 +288,19 @@ const Footer = () => {
             <Stack direction="row" alignItems="center" spacing={1}>
               <PersonIcon fontSize="small" />
               <Typography variant="body1" fontSize={{ xs: 14, sm: 16 }}>
-                Mr. Ritesh Kumar Tiwari
+                Mr. Alpesh Dangodra
               </Typography>
             </Stack>
             <Stack direction="row" alignItems="center" spacing={1}>
               <PhoneIcon fontSize="small" />
               <Typography variant="body1" fontSize={{ xs: 14, sm: 16 }}>
-                022-66351310
+                022-66351328
+              </Typography>
+            </Stack>
+            <Stack direction="row" alignItems="center" spacing={1}>
+              <EmailIcon fontSize="small" />
+              <Typography variant="body1" fontSize={{ xs: 14, sm: 16 }}>
+                ho_compliance@lkpsec.com
               </Typography>
             </Stack>
           </Box>
