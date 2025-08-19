@@ -1,52 +1,8 @@
-import { Box, Typography, Paper, Button, TextField } from "@mui/material";
+import { Box, Typography, Paper, Button } from "@mui/material";
 import homePage from "../../../assets/HomePage.png";
 import CustomContainer from "../../common/CustomContainer";
-import { useState } from "react";
-import { apiServices } from "../../../services";
 
 const HomeOne = () => {
-  const [phone, setPhone] = useState("");
-
-  const handleMobileLogin = async () => {
-    const trimmedPhone = phone.trim();
-
-    if (!/^\d{10}$/.test(trimmedPhone)) {
-      console.error("Invalid phone number");
-      return;
-    }
-
-    const payload = {
-      mobileNumber: trimmedPhone,
-    };
-
-    const encodedCredentials = btoa("admin:admin");
-    const customHeaders = {
-      Authorization: `Basic ${encodedCredentials}`,
-    };
-
-    try {
-      const response = await apiServices.ExternalSSORoute(
-        payload,
-        customHeaders
-      );
-      const originalUrl = response?.data?.data?.url;
-
-      if (originalUrl) {
-        const modifiedUrl = originalUrl.replace(
-          "live.meon.co.in",
-          "ekyc.pennypal.in"
-        );
-        window.open(modifiedUrl, "_blank");
-      } else {
-        console.error("No redirect URL found in response");
-      }
-    } catch (error) {
-      console.error("Failed to call SSO API:", error);
-    } finally {
-      setPhone("");
-    }
-  };
-
   return (
     <Box
       sx={{
@@ -128,20 +84,22 @@ const HomeOne = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              position: "relative",
               bgcolor: "transparent",
               p: 2,
               right: { md: "5rem" },
+              position: "relative",
             }}
           >
-            {/* Rotated Shadow Box */}
+            {/* Rotated shadow box */}
             <Box
               sx={{
                 position: "absolute",
+                // left: 18, // adjust as needed for shadow offset
                 width: "90%",
-                height: { xs: "85%", md: "85%" },
+                height: { xs: "80%", md: "85%" },
                 bgcolor: "#5633CD",
                 borderRadius: 5,
+                // filter: "blur(2px)",
                 transform: "rotate(8deg)",
                 zIndex: 0,
               }}
@@ -151,9 +109,8 @@ const HomeOne = () => {
               elevation={8}
               sx={{
                 borderRadius: 5,
-                p: { xs: 2, md: 4 },
-                height: { md: "100%" },
-                width: "100%",
+                p: 4,
+                height: { md: "95%" },
                 position: "relative",
                 bgcolor: "#F1EDFF",
                 textAlign: "center",
@@ -165,7 +122,8 @@ const HomeOne = () => {
                 sx={{
                   fontWeight: 800,
                   color: "#5633CD",
-                  fontSize: { xs: "2rem", md: "2.3rem" },
+                  mb: 2,
+                  fontSize: { md: "2.3rem" },
                   letterSpacing: "0.01em",
                 }}
               >
@@ -175,83 +133,13 @@ const HomeOne = () => {
                 sx={{
                   color: "#222",
                   fontSize: { xs: "1.05rem", md: "1.1rem" },
-                  mb: 2,
+                  mb: { xs: 2, md: 4 },
                 }}
               >
                 A trusted partner for smart trading and investing.
               </Typography>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  mb: 3,
-                  gap: 1,
-                }}
-              >
-                <TextField
-                  placeholder="Enter your number"
-                  variant="outlined"
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => {
-                    const numericInput = e.target.value
-                      .replace(/\D/g, "")
-                      .slice(0, 10);
-                    setPhone(numericInput);
-                  }}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") handleMobileLogin();
-                  }}
-                  inputProps={{
-                    inputMode: "numeric",
-                    maxLength: 10,
-                  }}
-                  sx={{
-                    flexGrow: 1,
-                    "& .MuiOutlinedInput-root": {
-                      borderRadius: "22px",
-                      bgcolor: "white",
 
-                      // ✅ Default border color
-                      "& fieldset": {
-                        borderColor: "#5633CD",
-                      },
-
-                      // ✅ Hover state
-                      "&:hover fieldset": {
-                        borderColor: "#5633CD",
-                      },
-
-                      // ✅ Focused (active) state
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#5633CD",
-                        borderWidth: ".5px", // optional: make it slightly thicker on focus
-                      },
-                    },
-                    "& .MuiOutlinedInput-input": {
-                      padding: "12px",
-                    },
-                  }}
-                  InputProps={{
-                    startAdornment: (
-                      <Typography
-                        sx={{
-                          fontWeight: 500,
-                          color: "#000",
-                          fontSize: "1rem",
-                          userSelect: "none",
-                        }}
-                      >
-                        +91
-                      </Typography>
-                    ),
-                    endAdornment: null,
-                  }}
-                />
-              </Box>
               <Button
-                fullWidth
-                onClick={handleMobileLogin}
                 sx={{
                   border: "1px solid #5633CD",
                   color: "#5633CD",
@@ -263,40 +151,18 @@ const HomeOne = () => {
                   boxShadow: "0px 0px 5px #c792e6",
                   mb: { xs: 3, md: 6 },
                 }}
+                target="_blank"
+                href="https://ekyc.pennypal.in/lkpsec/individual_pennypal"
               >
                 Open Free Account
               </Button>
-              <Box
-                component="a"
-                href="https://www.lkpsec.com/privacypolicy"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  textDecoration: "none",
-                  color: "#000",
-                  cursor: "pointer",
-                  "&:hover": {
-                    color: "#5633CD",
-                  },
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontSize: { xs: "0.75rem", md: "0.8rem" },
-                    display: "block",
-                  }}
-                >
-                  I agree to PennyPal Terms and Conditions
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: { xs: "0.75rem", md: "0.8rem" },
-                    display: "block",
-                  }}
-                >
-                  and Privacy Policy by continuing.
-                </Typography>
-              </Box>
+
+              <Typography sx={{ fontSize: { xs: "0.75rem", md: "0.8rem" } }}>
+                I agree to PennyPal Terms and Conditions
+              </Typography>
+              <Typography sx={{ fontSize: { xs: "0.75rem", md: "0.8rem" } }}>
+                and Privacy Policy by continuing.
+              </Typography>
             </Paper>
           </Box>
         </Box>
