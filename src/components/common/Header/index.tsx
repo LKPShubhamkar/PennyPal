@@ -124,7 +124,7 @@ const Header = () => {
               ))}
               <MenuItem
                 component="a"
-                href="https://ekyc.pennypal.in/lkpsec/individual_pennypal"
+                href="https://ekyc.pennypal.in/lkpsec/pennypal_live"
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
@@ -156,7 +156,7 @@ const Header = () => {
                 "&:hover": { bgcolor: "#8169e0" },
               }}
               target="_blank"
-              href="https://ekyc.pennypal.in/lkpsec/individual_pennypal"
+              href="https://ekyc.pennypal.in/lkpsec/pennypal_live"
             >
               Open Free Account
             </Button>

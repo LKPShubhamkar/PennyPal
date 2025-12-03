@@ -192,7 +192,7 @@ const PhoneInput = () => {
         Open Free Account
       </Typography>
       <IconButton
-        href="https://ekyc.pennypal.in/lkpsec/individual_pennypal"
+        href="https://ekyc.pennypal.in/lkpsec/pennypal_live"
         target="_blank"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}

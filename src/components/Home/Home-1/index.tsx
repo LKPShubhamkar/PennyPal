@@ -152,7 +152,7 @@ const HomeOne = () => {
                   mb: { xs: 3, md: 6 },
                 }}
                 target="_blank"
-                href="https://ekyc.pennypal.in/lkpsec/individual_pennypal"
+                href="https://ekyc.pennypal.in/lkpsec/pennypal_live"
               >
                 Open Free Account
               </Button>
