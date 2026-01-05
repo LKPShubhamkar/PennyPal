@@ -288,19 +288,19 @@ const Footer = () => {
             <Stack direction="row" alignItems="center" spacing={1}>
               <PersonIcon fontSize="small" />
               <Typography variant="body1" fontSize={{ xs: 14, sm: 16 }}>
-                Mr. Alpesh Dangodra
+              Ms. Ayushi Jain
               </Typography>
             </Stack>
             <Stack direction="row" alignItems="center" spacing={1}>
               <PhoneIcon fontSize="small" />
               <Typography variant="body1" fontSize={{ xs: 14, sm: 16 }}>
-                022-66351328
+              022-66351310
               </Typography>
             </Stack>
             <Stack direction="row" alignItems="center" spacing={1}>
               <EmailIcon fontSize="small" />
               <Typography variant="body1" fontSize={{ xs: 14, sm: 16 }}>
-                ho_compliance@lkpsec.com
+              ho_compliance@lkpsec.com
               </Typography>
             </Stack>
           </Box>
