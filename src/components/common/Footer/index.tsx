@@ -218,7 +218,7 @@ const Footer = () => {
             <br />
             CIN L67120MH1994PLC080039 and Maharashtra GSTIN No: 27AAACL0963A1ZZ
             <br />
-            Research Analyst registration number: INH00001758
+            Research Analyst registration number: INH000001758
             <br />
             DP registration number: IN-DP-705-2022
             <br />
@@ -288,19 +288,19 @@ const Footer = () => {
             <Stack direction="row" alignItems="center" spacing={1}>
               <PersonIcon fontSize="small" />
               <Typography variant="body1" fontSize={{ xs: 14, sm: 16 }}>
-              Ms. Ayushi Jain
+                Ms. Ayushi Jain
               </Typography>
             </Stack>
             <Stack direction="row" alignItems="center" spacing={1}>
               <PhoneIcon fontSize="small" />
               <Typography variant="body1" fontSize={{ xs: 14, sm: 16 }}>
-              022-66351310
+                022-66351310
               </Typography>
             </Stack>
             <Stack direction="row" alignItems="center" spacing={1}>
               <EmailIcon fontSize="small" />
               <Typography variant="body1" fontSize={{ xs: 14, sm: 16 }}>
-              ho_compliance@lkpsec.com
+                ho_compliance@lkpsec.com
               </Typography>
             </Stack>
           </Box>
